@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=20">
 </head>
 <body class="light-theme">
   
@@ -608,6 +608,22 @@
           <h3>Today's Meal Log</h3>
         </div>
         <div class="meal-log-list" id="loggedMealsList"></div>
+
+        <!-- NUTRITION MEDICINES & SUPPLEMENTS SHOP (Dragmans & Cosynee Life) -->
+        <div class="section-header mt-4">
+          <h3>Nutraceuticals & Dietary Medicines 💊</h3>
+          <span class="section-tag">Dragmans & Cosynee Life Official</span>
+        </div>
+        
+        <div class="filter-pills" id="nutritionFilterPills" style="margin-bottom: 12px;">
+          <button class="pill active" onclick="filterNutritionSupplements('all', this)">All (20)</button>
+          <button class="pill" onclick="filterNutritionSupplements('gut', this)">Gut & Detox</button>
+          <button class="pill" onclick="filterNutritionSupplements('sleep', this)">Stress & Sleep</button>
+          <button class="pill" onclick="filterNutritionSupplements('vitality', this)">Vitality & Energy</button>
+          <button class="pill" onclick="filterNutritionSupplements('vitamins', this)">Vitamins & Minerals</button>
+        </div>
+
+        <div class="grid-container" id="nutritionSupplementsGrid"></div>
       </section>
 
       <!-- MODULE 6: GROWTH -->
@@ -636,6 +652,13 @@
             <div class="habits-list" id="habitsList"></div>
           </div>
         </div>
+
+        <!-- GROWTH & LONGEVITY MEDICINES & SUPPLEMENTS (Dragmans & Cosynee Life) -->
+        <div class="section-header mt-4">
+          <h3>Growth, Rejuvenation & Longevity Medicines 🌿</h3>
+          <span class="section-tag">Dragmans & Cosynee Life Official</span>
+        </div>
+        <div class="grid-container" id="growthSupplementsGrid"></div>
 
         <div class="section-header mt-4">
           <h3>Milestone Badges & Rewards</h3>
@@ -764,6 +787,6 @@
 
   </div>
 
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=20"></script>
 </body>
 </html>
