@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500&f[]=cabinet-grotesk@800,700,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5000">
+  <link rel="stylesheet" href="style.css?v=8888">
 </head>
 <body class="light-theme">
   
@@ -126,11 +126,63 @@
       <!-- HERO LANDING PAGE (#view-hero) -->
       <section id="view-hero" class="module-view active">
         
-        <!-- CARING VERTICAL ORBIT CAROUSEL SECTION (TOP HERO FEATURE) -->
+        <!-- COMPACT CARING ORBIT NODE STRIP (ZERO-CLUTTER TOP HERO) -->
+        <div class="caring-orbit-strip">
+          <div class="orbit-strip-header">
+            <h2 class="caring-title">Your <span class="caring-acronym-badge">C • A • R • I • N • G</span> Orbit</h2>
+            <span class="caring-subtitle">1-Tap Direct Module Navigation</span>
+          </div>
+
+          <div class="caring-node-grid">
+            <div class="caring-node-pill card-c" onclick="switchTab('view-care')">
+              <div class="caring-letter-box">C</div>
+              <span class="node-label">Care</span>
+            </div>
+            <div class="caring-node-pill card-a" onclick="switchTab('view-activity')">
+              <div class="caring-letter-box">A</div>
+              <span class="node-label">Activity</span>
+            </div>
+            <div class="caring-node-pill card-r" onclick="switchTab('view-report')">
+              <div class="caring-letter-box">R</div>
+              <span class="node-label">Report</span>
+            </div>
+            <div class="caring-node-pill card-i" onclick="switchTab('view-inspire')">
+              <div class="caring-letter-box">I</div>
+              <span class="node-label">Inspire</span>
+            </div>
+            <div class="caring-node-pill card-n" onclick="switchTab('view-nutrition')">
+              <div class="caring-letter-box">N</div>
+              <span class="node-label">Nutrition</span>
+            </div>
+            <div class="caring-node-pill card-g" onclick="switchTab('view-growth')">
+              <div class="caring-letter-box">G</div>
+              <span class="node-label">Growth</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Welcome Hero Banner -->
+        <div class="hero-welcome-card">
+          <div class="welcome-left">
+            <span class="welcome-greeting">Good Morning, Rahul 👋</span>
+            <h1 class="hero-heading">Align Your Habits. Own Your Orbit.</h1>
+            <p class="hero-subtext">Preventive healthcare, diagnostic tracking, customized workouts, and nutrition tailored to your personal health ecosystem.</p>
+          </div>
+          <div class="welcome-score-widget">
+            <span class="score-widget-title">Orbit Health Score</span>
+            <div class="score-ring">
+              <span class="score-val" id="heroScoreNum">84</span>
+              <span class="score-max">/100</span>
+            </div>
+            <span class="score-status-chip">Optimal Orbit</span>
+          </div>
+        </div>
+
+        <!-- DETAILED CARING MODULES SECTION -->
         <div class="caring-section">
           <div class="caring-header">
             <div>
-              <h2 class="caring-title">Your Daily <span class="caring-acronym-badge">C • A • R • I • N • G</span> Orbit</h2>
+              <h2 class="caring-title">Explore <span class="caring-acronym-badge">C • A • R • I • N • G</span> Modules</h2>
             </div>
           </div>
 
@@ -793,6 +845,6 @@
 
   </div>
 
-  <script src="app.js?v=5000"></script>
+  <script src="app.js?v=8888"></script>
 </body>
 </html>
