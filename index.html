@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500&f[]=cabinet-grotesk@800,700,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=8888">
+  <link rel="stylesheet" href="style.css?v=9999">
 </head>
 <body class="light-theme">
   
@@ -126,12 +126,10 @@
       <!-- HERO LANDING PAGE (#view-hero) -->
       <section id="view-hero" class="module-view active">
         
-        <!-- INTERACTIVE YOURBIT CIRCULAR ORBIT LOGO WHEEL (EXACT GRAPHIC MATCH) -->
+        <!-- INTERACTIVE YOURBIT CIRCULAR ORBIT LOGO WHEEL (PIXEL-PERFECT SVG MATCH) -->
         <div class="yourbit-orbit-wheel-wrapper">
-          
-          <div class="yourbit-orbit-stage">
-            <!-- SVG Multi-Color Smooth Orbit Arc Ring & Center Person Figure -->
-            <svg class="orbit-ring-svg" viewBox="0 0 340 340">
+          <div class="yourbit-orbit-svg-container">
+            <svg class="orbit-master-svg" viewBox="0 0 440 400" preserveAspectRatio="xMidYMid meet">
               <defs>
                 <linearGradient id="orbitArcGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stop-color="#F59E0B" />
@@ -141,58 +139,69 @@
                   <stop offset="80%" stop-color="#0D9488" />
                   <stop offset="100%" stop-color="#10B981" />
                 </linearGradient>
+                
+                <!-- Node Radial Gradients for 3D Glow -->
+                <radialGradient id="grad-c" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#FBBF24"/><stop offset="100%" stop-color="#D97706"/></radialGradient>
+                <radialGradient id="grad-a" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#FB923C"/><stop offset="100%" stop-color="#EA580C"/></radialGradient>
+                <radialGradient id="grad-r" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#F43F5E"/><stop offset="100%" stop-color="#BE123C"/></radialGradient>
+                <radialGradient id="grad-i" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#1D4ED8"/></radialGradient>
+                <radialGradient id="grad-n" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#14B8A6"/><stop offset="100%" stop-color="#0F766E"/></radialGradient>
+                <radialGradient id="grad-g" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#34D399"/><stop offset="100%" stop-color="#059669"/></radialGradient>
               </defs>
-              
-              <!-- Outer Connecting Smooth Orbit Arc Ring -->
-              <circle cx="170" cy="170" r="105" fill="none" stroke="url(#orbitArcGradient)" stroke-width="6" opacity="0.95" />
 
-              <!-- Central Person Figure (Matches YOURBIT Logo) -->
-              <g transform="translate(144, 130) scale(1.18)">
-                <circle cx="22" cy="12" r="7.5" fill="#0F2942" />
+              <!-- Outer Smooth Orbit Ring Arc -->
+              <circle cx="220" cy="200" r="115" fill="none" stroke="url(#orbitArcGradient)" stroke-width="7" opacity="0.95" />
+
+              <!-- Central Person Figure (Matches Logo Perfectly) -->
+              <g transform="translate(193, 158) scale(1.22)">
+                <circle cx="22" cy="12" r="8" fill="#0F2942" />
                 <path d="M 3 20 C 13 18, 17 28, 22 42 C 27 28, 31 18, 41 20 C 34 26, 28 34, 26 52 L 18 52 C 16 34, 10 26, 3 20 Z" fill="#0F2942" />
               </g>
+
+              <!-- 1. Node C: CARE (Top) -->
+              <g class="svg-orbit-interactive-node" onclick="switchTab('view-care')">
+                <text x="220" y="46" text-anchor="middle" class="svg-node-label">CARE</text>
+                <circle cx="220" cy="85" r="22" fill="url(#grad-c)" stroke="#FFFFFF" stroke-width="2.5" class="svg-node-circle" />
+                <text x="220" y="92" text-anchor="middle" class="svg-node-letter">C</text>
+              </g>
+
+              <!-- 2. Node A: ACTIVITY (Top Right) -->
+              <g class="svg-orbit-interactive-node" onclick="switchTab('view-activity')">
+                <text x="375" y="118" text-anchor="end" class="svg-node-label">ACTIVITY</text>
+                <circle cx="320" cy="142" r="22" fill="url(#grad-a)" stroke="#FFFFFF" stroke-width="2.5" class="svg-node-circle" />
+                <text x="320" y="149" text-anchor="middle" class="svg-node-letter">A</text>
+              </g>
+
+              <!-- 3. Node R: REPORTS (Bottom Right) -->
+              <g class="svg-orbit-interactive-node" onclick="switchTab('view-report')">
+                <circle cx="320" cy="258" r="22" fill="url(#grad-r)" stroke="#FFFFFF" stroke-width="2.5" class="svg-node-circle" />
+                <text x="320" y="265" text-anchor="middle" class="svg-node-letter">R</text>
+                <text x="382" y="296" text-anchor="end" class="svg-node-label">REPORTS</text>
+              </g>
+
+              <!-- 4. Node I: INSPIRE (Bottom) -->
+              <g class="svg-orbit-interactive-node" onclick="switchTab('view-inspire')">
+                <circle cx="220" cy="315" r="22" fill="url(#grad-i)" stroke="#FFFFFF" stroke-width="2.5" class="svg-node-circle" />
+                <text x="220" y="322" text-anchor="middle" class="svg-node-letter">I</text>
+                <text x="220" y="362" text-anchor="middle" class="svg-node-label">INSPIRE</text>
+              </g>
+
+              <!-- 5. Node N: NUTRITION (Bottom Left) -->
+              <g class="svg-orbit-interactive-node" onclick="switchTab('view-nutrition')">
+                <text x="58" y="296" text-anchor="start" class="svg-node-label">NUTRITION</text>
+                <circle cx="120" cy="258" r="22" fill="url(#grad-n)" stroke="#FFFFFF" stroke-width="2.5" class="svg-node-circle" />
+                <text x="120" y="265" text-anchor="middle" class="svg-node-letter">N</text>
+              </g>
+
+              <!-- 6. Node G: GROWTH (Top Left) -->
+              <g class="svg-orbit-interactive-node" onclick="switchTab('view-growth')">
+                <text x="65" y="118" text-anchor="start" class="svg-node-label">GROWTH</text>
+                <circle cx="120" cy="142" r="22" fill="url(#grad-g)" stroke="#FFFFFF" stroke-width="2.5" class="svg-node-circle" />
+                <text x="120" y="149" text-anchor="middle" class="svg-node-letter">G</text>
+              </g>
+
             </svg>
-
-            <!-- 6 Interactive Letter Nodes + Outside Labels -->
-
-            <!-- Node C: CARE (Top) -->
-            <div class="orbit-wheel-node node-pos-c" onclick="switchTab('view-care')">
-              <span class="orbit-label-title label-c">CARE</span>
-              <div class="node-bubble bubble-c">C</div>
-            </div>
-
-            <!-- Node A: ACTIVITY (Top Right) -->
-            <div class="orbit-wheel-node node-pos-a" onclick="switchTab('view-activity')">
-              <span class="orbit-label-title label-a">ACTIVITY</span>
-              <div class="node-bubble bubble-a">A</div>
-            </div>
-
-            <!-- Node R: REPORTS (Bottom Right) -->
-            <div class="orbit-wheel-node node-pos-r" onclick="switchTab('view-report')">
-              <div class="node-bubble bubble-r">R</div>
-              <span class="orbit-label-title label-r">REPORTS</span>
-            </div>
-
-            <!-- Node I: INSPIRE (Bottom) -->
-            <div class="orbit-wheel-node node-pos-i" onclick="switchTab('view-inspire')">
-              <div class="node-bubble bubble-i">I</div>
-              <span class="orbit-label-title label-i">INSPIRE</span>
-            </div>
-
-            <!-- Node N: NUTRITION (Bottom Left) -->
-            <div class="orbit-wheel-node node-pos-n" onclick="switchTab('view-nutrition')">
-              <span class="orbit-label-title label-n">NUTRITION</span>
-              <div class="node-bubble bubble-n">N</div>
-            </div>
-
-            <!-- Node G: GROWTH (Top Left) -->
-            <div class="orbit-wheel-node node-pos-g" onclick="switchTab('view-growth')">
-              <span class="orbit-label-title label-g">GROWTH</span>
-              <div class="node-bubble bubble-g">G</div>
-            </div>
-
           </div>
-
         </div>
 
         <!-- CIRCULAR HEALTH SCORE METER SECTION -->
@@ -788,6 +797,6 @@
 
   </div>
 
-  <script src="app.js?v=8888"></script>
+  <script src="app.js?v=9999"></script>
 </body>
 </html>
