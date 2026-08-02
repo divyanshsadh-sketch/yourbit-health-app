@@ -397,13 +397,40 @@
       </section>
 
       <!-- MODULE 3: REPORT -->
+      <!-- MODULE 3: REPORT -->
       <section id="view-report" class="module-view">
         <div class="module-hero report-hero">
           <div class="hero-text">
-            <h2>Health Reports & Vitals 📊</h2>
-            <p>Track vital signs, upload medical reports, and inspect age-wise diagnostic guidelines.</p>
+            <h2>Reports & Diagnostics 📊</h2>
+            <p>Test Smart. Detect Early. Stay Informed. Browse tests in simple non-jargon words, track vitals, and upload lab reports.</p>
           </div>
           <button class="btn btn-secondary" id="btnLogVitals">✏️ Log New Vitals</button>
+        </div>
+
+        <!-- DIAGNOSTICS MODULE PHILOSOPHY & LOCATION BANNER -->
+        <div style="background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 14px; margin-bottom: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+            <div style="font-size: 0.85rem; font-weight: 800; color: var(--emerald);">
+              🌟 Core Philosophy: Test Smart • Detect Early • Stay Informed
+            </div>
+            <span style="font-size: 0.7rem; font-weight: 700; background: #FEF3C7; color: #92400E; padding: 3px 8px; border-radius: var(--radius-full);">
+              🏠 Home Sample Collection & Pickup Active
+            </span>
+          </div>
+          <div style="font-size: 0.74rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 8px;">
+            <strong>📍 Dedicated Field Service Locations:</strong> Pickup and drop facility available across <strong>Ghaziabad, Faridabad, Noida, and Delhi-NCR</strong>.
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; font-size: 0.72rem;">
+            <div style="background: var(--bg-card); padding: 8px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              💡 <strong>Non-Jargon Explanations:</strong> Every test explained in easy words instead of medical jargon.
+            </div>
+            <div style="background: var(--bg-card); padding: 8px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              🔒 <strong>Centralized Storage:</strong> All medical reports stored in one encrypted lifelong health record.
+            </div>
+            <div style="background: var(--bg-card); padding: 8px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              🧬 <strong>Comprehensive Testing:</strong> Full Body MRI, DEXA Scan, FibroScan, Calcium Score & Genetics.
+            </div>
+          </div>
         </div>
 
         <!-- PROMINENT DISEASE & SYMPTOM DIAGNOSTIC SEARCH ENGINE -->
@@ -415,24 +442,24 @@
             <span style="font-size: 0.65rem; color: #94A3B8;">35+ Clinical Profiles</span>
           </div>
 
-          <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 4px; color: white;">Search Any Health Issue or Disease</h3>
-          <p style="font-size: 0.75rem; color: #94A3B8; margin-bottom: 12px;">Type your symptoms (e.g. fever, joint pain, thyroid), disease name, or medical term to view recommended basic & advanced diagnostics.</p>
+          <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 4px; color: white;">Search Any Health Issue, Disease, or Diagnostic Test</h3>
+          <p style="font-size: 0.75rem; color: #94A3B8; margin-bottom: 12px;">Type your symptoms (e.g. fever, joint pain, thyroid), disease name, or test (e.g. MRI, DEXA, Calcium Score, Blood Test) to view diagnostic recommendations.</p>
 
           <!-- Big Search Bar -->
           <div style="position: relative; margin-bottom: 10px;">
-            <input type="text" id="diseaseSearchInput" class="form-input" placeholder="🔍 Type health issue, symptom (e.g. Diabetes, PCOS, Back Pain, Thyroid)..." oninput="filterDiseaseExplorer()" style="padding: 12px 14px; font-size: 0.9rem; border-radius: var(--radius-md); border: 2px solid #334155; background: #0F172A; color: white;">
+            <input type="text" id="diseaseSearchInput" class="form-input" placeholder="🔍 Type health issue, symptom or test (e.g. MRI, DEXA, Diabetes, Thyroid)..." oninput="filterDiseaseExplorer()" style="padding: 12px 14px; font-size: 0.9rem; border-radius: var(--radius-md); border: 2px solid #334155; background: #0F172A; color: white;">
           </div>
 
           <!-- Quick Suggestion Search Chips -->
           <div style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; white-space: nowrap;">
             <span style="font-size: 0.65rem; color: #94A3B8; font-weight: 700; align-self: center;">Popular:</span>
+            <button class="pill" onclick="quickSearchDisease('MRI')" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">🧲 Full Body MRI</button>
+            <button class="pill" onclick="quickSearchDisease('DEXA')" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">🦴 DEXA Scan</button>
             <button class="pill" onclick="quickSearchDisease('Diabetes')" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">🩸 Diabetes</button>
             <button class="pill" onclick="quickSearchDisease('Thyroid')" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">🦋 Thyroid</button>
             <button class="pill" onclick="quickSearchDisease('PCOS')" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">🌸 PCOS</button>
             <button class="pill" onclick="quickSearchDisease('Hypertension')" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">❤️ Blood Pressure</button>
             <button class="pill" onclick="quickSearchDisease('Cervical')" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">💻 Neck/Back Pain</button>
-            <button class="pill" onclick="quickSearchDisease('Fever')" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">🤒 Fever</button>
-            <button class="pill" onclick="quickSearchDisease('Joint')" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">🦴 Joint Pain</button>
           </div>
         </div>
 
@@ -478,8 +505,8 @@
         </div>
 
         <div class="section-header mt-4">
-          <h3>Uploaded Medical Reports & Scans</h3>
-          <button class="btn btn-sm btn-outline" id="btnUploadReport">📤 Upload Report</button>
+          <h3>Uploaded Medical Reports & Scans Vault</h3>
+          <button class="btn btn-sm btn-outline" id="btnUploadReport" onclick="triggerReportUpload()">📤 Upload Report</button>
         </div>
         <div class="report-vault-list" id="reportVaultList"></div>
       </section>
