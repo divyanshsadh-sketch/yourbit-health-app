@@ -216,6 +216,7 @@ function updateAgeSpecificContent() {
   const tag = document.getElementById("activityAgeTag");
   if (tag) tag.textContent = `${ageData.name} Focus`;
   renderActivityModule();
+  // Keep diseaseAgeFilter as 'all' by default so all 35+ options are visible
   renderAgeDiseaseGrid();
 }
 
