@@ -827,8 +827,6 @@ function renderGrowthModule() {
     </div>
   `).join("");
 
-  renderGrowthSupplements();
-
   const badgesGrid = document.getElementById("badgesGrid");
   const badges = [
     { icon: "🔥", name: "7-Day Streak", desc: "Logged health 7 days in a row" },
@@ -842,26 +840,6 @@ function renderGrowthModule() {
       <div class="badge-icon">${b.icon}</div>
       <div class="badge-name">${b.name}</div>
       <div class="badge-desc">${b.desc}</div>
-    </div>
-  `).join("");
-}
-
-function renderGrowthSupplements() {
-  const container = document.getElementById("growthSupplementsGrid");
-  if (!container) return;
-
-  // Show top longevity, muscle growth & vitality medicines
-  const growthProds = HEALTH_MEDICINES_CATALOG.filter(p => ['vitality', 'vitamins', 'gut'].includes(p.cat)).slice(0, 10);
-
-  container.innerHTML = growthProds.map(p => `
-    <div class="card-item">
-      <span class="card-badge ${p.brand === 'Dragmans' ? 'badge-test' : 'badge-prod'}">${p.badge}</span>
-      <div class="card-title">${p.title}</div>
-      <div class="card-desc">${p.desc}</div>
-      <div class="card-meta">
-        <div><span class="price-text">₹${p.price}</span><span class="price-orig">₹${p.orig}</span></div>
-        <button class="btn btn-sm btn-primary" onclick="addToCart('${p.title}', ${p.price})">+ Add to Cart</button>
-      </div>
     </div>
   `).join("");
 }
