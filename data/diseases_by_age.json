@@ -1,0 +1,450 @@
+{
+  "age_groups": [
+    {
+      "id": "infancy",
+      "name": "Infancy (0 - 1 Year)",
+      "focus": "Neonatal immunity, metabolic stabilization, and digestive protection",
+      "diseases": [
+        {
+          "ayurvedic_name": "Balatipata",
+          "modern_name": "Neonatal Sepsis & Birth Complications",
+          "dosha_pathogenesis": "Kapha-Vata prakopa in Rakta dhatu",
+          "symptoms": "Lethargy, hypothermia or fever, poor suckling, respiratory distress, grunting, jaundice, bulging fontanelle",
+          "basic_diagnostics": "Complete Blood Count (CBC), C-Reactive Protein (CRP), Random Blood Glucose, Pulse Oximetry",
+          "advanced_diagnostics": "Blood & CSF Cultures (Lumbar Puncture), Serum Procalcitonin, Arterial Blood Gas (ABG), Cranial Ultrasound",
+          "dosage_form": "Sterile-processed pediatric drops, Suvarna enriched rasayana",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Pratishyaya & Kasa",
+          "modern_name": "Acute Respiratory Infections & RSV",
+          "dosha_pathogenesis": "Kapha obstruction in Prana vaha srotas",
+          "symptoms": "Tachypnea (rapid breathing), nasal flaring, intercostal chest retractions, wheezing, cough, poor feeding",
+          "basic_diagnostics": "Nasopharyngeal Viral Antigen Swab, Pulse Oximetry, CBC",
+          "advanced_diagnostics": "Rapid Multiplex PCR Respiratory Panel, Chest X-ray, Arterial/Capillary Blood Gas Analysis",
+          "dosage_form": "Alcohol-free herbal linctus, honey-based drops",
+          "commercial_potential": "High Volume"
+        },
+        {
+          "ayurvedic_name": "Karshya & Shosh",
+          "modern_name": "Severe Malnutrition & Wasting",
+          "dosha_pathogenesis": "Rasakshya due to weak Agni",
+          "symptoms": "MUAC < 11.5 cm, visible muscle wasting (marasmus), pitting edema (kwashiorkor), sparse hair",
+          "basic_diagnostics": "Mid-Upper Arm Circumference (MUAC), WHO Weight-for-Height Z-score, Hemoglobin",
+          "advanced_diagnostics": "Serum Electrolytes (Potassium/Magnesium), Serum Albumin & Prealbumin, Zinc & Vitamin A Levels",
+          "dosage_form": "Balarishta, enriched Swarna Prashana formulations",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Sahaja Hridroga",
+          "modern_name": "Congenital Heart Defects",
+          "dosha_pathogenesis": "Garbhaja Beeja Dushti (Hridya anomalies)",
+          "symptoms": "Cyanosis (bluish skin/lips), feeding fatigue, excessive sweating while nursing, heart murmur, poor weight gain",
+          "basic_diagnostics": "4-Limb Pulse Oximetry Screening, Chest X-ray, 12-Lead Electrocardiogram (ECG)",
+          "advanced_diagnostics": "Transthoracic Echocardiography (Echo), Cardiac MRI, Pediatric Cardiac Catheterization",
+          "dosage_form": "Specialized classical medicated ghritas",
+          "commercial_potential": "Niche Specialist"
+        },
+        {
+          "ayurvedic_name": "Kshiralsaka",
+          "modern_name": "Milk-Induced Indigestion & Diarrhea",
+          "dosha_pathogenesis": "Pitta-Kapha dushti in Anna vaha srotas",
+          "symptoms": "Explosive watery stools, abdominal distension, severe colic/gas, eczema, flecks of blood or mucus in stool",
+          "basic_diagnostics": "Stool pH, Stool Reducing Substances, Stool Routine & Microscopy (occult blood check)",
+          "advanced_diagnostics": "Milk-Specific Serum IgE, Skin Prick Testing, Hydrogen Breath Test, Diagnostic Food Elimination & Challenge",
+          "dosage_form": "Deepana-Pachana herbal syrups, Gripe water variants",
+          "commercial_potential": "Massive Volume"
+        }
+      ]
+    },
+    {
+      "id": "toddlers",
+      "name": "Toddlers & Early Childhood (1 - 5 Years)",
+      "focus": "Weaning transition support, parasite control, and infection defense",
+      "diseases": [
+        {
+          "ayurvedic_name": "Parigarbhika & Phakka",
+          "modern_name": "Childhood Stunting & Wasting",
+          "dosha_pathogenesis": "Mamsa-Meda deficiency (Rasashraya)",
+          "symptoms": "Height-for-age Z-score < -2 SD, weight-for-height Z-score < -2 SD, delayed motor milestones, chronic infections",
+          "basic_diagnostics": "WHO Growth Chart Plotting, CBC, Urine Routine, Stool Routine",
+          "advanced_diagnostics": "Thyroid Function Tests (TSH, Free T4), Celiac Serology (tTG-IgA), Serum IGF-1, Stool Elastase",
+          "dosage_form": "Multi-herbal protein-herbal granules",
+          "commercial_potential": "High Volume"
+        },
+        {
+          "ayurvedic_name": "Krimiroga",
+          "modern_name": "Soil-Transmitted Helminths (Worms)",
+          "dosha_pathogenesis": "Purisha vaha srotas infestation (Krimi)",
+          "symptoms": "Perianal nocturnal itching (pinworms), abdominal pain, bloating, unexplained weight loss, passing worms",
+          "basic_diagnostics": "Stool Routine & Microscopy (Ova & Parasite count), Cellophane Tape Test",
+          "advanced_diagnostics": "Stool Concentration Techniques, Blood Absolute Eosinophil Count, Stool PCR Parasite Panel",
+          "dosage_form": "Vidangarishta, herbal anthelmintic syrups",
+          "commercial_potential": "High Volume"
+        },
+        {
+          "ayurvedic_name": "Romantika & Masurika",
+          "modern_name": "Measles, Mumps & Viral Exanthems",
+          "dosha_pathogenesis": "Rakta-Pitta vitiation and outer exposure",
+          "symptoms": "Maculopapular rash, high fever, Koplik spots (oral), painful swollen parotid glands, conjunctivitis",
+          "basic_diagnostics": "Clinical Physical Evaluation, CBC (leukopenia/lymphocytosis), CRP",
+          "advanced_diagnostics": "Specific Serum Viral Serology (IgM and IgG), Nasopharyngeal/Oral RT-PCR",
+          "dosage_form": "External Lepam, cooling internal Kwath",
+          "commercial_potential": "Seasonal Volume"
+        },
+        {
+          "ayurvedic_name": "Agantuja Visha",
+          "modern_name": "Accidental Ingestions, Poisoning & Burns",
+          "dosha_pathogenesis": "Vishakta environmental exposure",
+          "symptoms": "Sudden altered mental state, drooling, oral mucosal burns, stridor, unexplained pinpoint or dilated pupils",
+          "basic_diagnostics": "Arterial Blood Gas (ABG), Comprehensive Metabolic Panel (CMP), Toxicology Screen, ECG",
+          "advanced_diagnostics": "Upper Endoscopy (EGD for corrosive ingestion), Chest/Abdominal X-rays, Contrast CT Scan",
+          "dosage_form": "Emergency topical healing oils (Jatyadi Taila)",
+          "commercial_potential": "FMCG Utility"
+        }
+      ]
+    },
+    {
+      "id": "children",
+      "name": "School-Age Children (5 - 10 Years)",
+      "focus": "Cognitive support, vision health, and respiratory care",
+      "diseases": [
+        {
+          "ayurvedic_name": "Krimi Danta",
+          "modern_name": "Dental Caries & Periodontal Issues",
+          "dosha_pathogenesis": "Asthi dhatu erosion via Kapha-Pitta",
+          "symptoms": "Toothache, sensitivity to hot/cold/sweet foods, visible dark pits, bleeding gums, halitosis",
+          "basic_diagnostics": "Visual-Tactile Examination with Dental Probe, Gingival Index Scoring",
+          "advanced_diagnostics": "Intraoral Bitewing & Periapical Radiographs, Panoramic Radiograph (OPG), Quantitative Light Fluorescence",
+          "dosage_form": "Herbal toothpastes (Dantadhavana Churna), mouthwashes",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Drishtigata Timira",
+          "modern_name": "Pediatric Myopia & Digital Eye Strain",
+          "dosha_pathogenesis": "Alokaka Pitta depletion in Netra",
+          "symptoms": "Squinting, sitting close to screens, frequent eye rubbing, headaches, blurred distance vision",
+          "basic_diagnostics": "Visual Acuity Test (Snellen Chart), Subjective Refraction, Cover/Uncover Test",
+          "advanced_diagnostics": "Cycloplegic Refraction, Ocular Axial Length Measurement (Optical Biometry), Corneal Topography",
+          "dosage_form": "Triphala Ghrita capsules, specialized eye drops",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Tamaka Shwasa",
+          "modern_name": "Pediatric Asthma & Allergic Bronchitis",
+          "dosha_pathogenesis": "Prana vaha srotas obstruction by Kapha",
+          "symptoms": "Recurrent wheezing, dry cough at night or during exercise, shortness of breath, chest tightness",
+          "basic_diagnostics": "Peak Expiratory Flow Rate (PEFR), Diagnostic Inhaled Bronchodilator Trial",
+          "advanced_diagnostics": "Pre/Post-Bronchodilator Spirometry, Fractional Exhaled Nitric Oxide (FeNO), Skin Prick Allergy Panel",
+          "dosage_form": "Sitopaladi Churna syrup bases, herbal cough drops",
+          "commercial_potential": "Massive Volume"
+        },
+        {
+          "ayurvedic_name": "Buddhi Mandya",
+          "modern_name": "ADHD & Learning Difficulties",
+          "dosha_pathogenesis": "Medhya depletion (Majja dhatu lag)",
+          "symptoms": "Inattention, hyperactivity, impulsivity, failure to follow multi-step instructions, academic lag",
+          "basic_diagnostics": "Standardized Questionnaires (Conners 3, Vanderbilt), Hearing & Vision Screening",
+          "advanced_diagnostics": "Comprehensive Neuropsychological Evaluation, Continuous Performance Test (CPT), WISC-V",
+          "dosage_form": "Brahmi and Shankhpushpi standardized syrups",
+          "commercial_potential": "High Volume"
+        },
+        {
+          "ayurvedic_name": "Sthaulya",
+          "modern_name": "Childhood Obesity & Overweight",
+          "dosha_pathogenesis": "Meda dhatu over-accumulation",
+          "symptoms": "BMI >= 95th percentile (obesity), acanthosis nigricans (dark neck folds), exertion dyspnea",
+          "basic_diagnostics": "BMI-for-age Percentile Calculation, Office Blood Pressure, Fasting Glucose",
+          "advanced_diagnostics": "Oral Glucose Tolerance Test (OGTT), Fasting Insulin, Liver Enzymes (ALT/AST), DXA Body Composition",
+          "dosage_form": "Functional herbal malt drinks, metabolism gummies",
+          "commercial_potential": "High Margin"
+        }
+      ]
+    },
+    {
+      "id": "adolescents",
+      "name": "Adolescents & Teenagers (10 - 20 Years)",
+      "focus": "Pubertal hormone balancing, acne management, and mental stress",
+      "diseases": [
+        {
+          "ayurvedic_name": "Yuvana Pidika",
+          "modern_name": "Acne Vulgaris & Dermatological Eruptions",
+          "dosha_pathogenesis": "Rakta-Pitta impurity affecting Twak",
+          "symptoms": "Comedones (blackheads/whiteheads), inflammatory papules, painful nodulocystic lesions, scarring",
+          "basic_diagnostics": "Clinical Visual Assessment, Global Acne Grading System (GAGS)",
+          "advanced_diagnostics": "Serum Free & Total Testosterone, DHEAS, LH/FSH Ratio, Lesion Bacterial/Fungal Culture",
+          "dosage_form": "Herbal face washes, Manjisthadi blood purifiers",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Artava Kshaya",
+          "modern_name": "PCOS & Menstrual Irregularities",
+          "dosha_pathogenesis": "Artava vaha srotas obstruction (Vata-Kapha)",
+          "symptoms": "Oligomenorrhea (infrequent periods), hirsutism (excess facial/body hair), cystic acne, weight gain",
+          "basic_diagnostics": "Serum Free/Total Testosterone, LH & FSH Levels, Fasting Lipid Panel",
+          "advanced_diagnostics": "Pelvic Ultrasound (Ovarian volume & follicle count), Anti-Müllerian Hormone (AMH), 17-OHP",
+          "dosage_form": "Ashokarishta formulations, targeted herbal tablets",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Rasagata Sthaulya",
+          "modern_name": "Early Adolescent Insulin Resistance",
+          "dosha_pathogenesis": "Meda-Mamsa stagnation",
+          "symptoms": "Darkening skin folds (acanthosis nigricans), abdominal adiposity, post-meal fatigue, intense sugar cravings",
+          "basic_diagnostics": "Fasting Blood Glucose, HbA1c, Fasting Lipid Panel",
+          "advanced_diagnostics": "Fasting Insulin & HOMA-IR Calculation, 2-Hour Oral Glucose Tolerance Test (OGTT)",
+          "dosage_form": "Standardized metabolic herbal extracts",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Vishada & Manasika Shrama",
+          "modern_name": "Exam Anxiety & Depression",
+          "dosha_pathogenesis": "Manovaha srotas stress (Rajas-Tamas spike)",
+          "symptoms": "Panic attacks before exams, persistent low mood, loss of interest, sleep disturbances, tension headaches",
+          "basic_diagnostics": "PHQ-9 (Depression) & GAD-7 (Anxiety) Questionnaires, TSH, Vitamin D & B12",
+          "advanced_diagnostics": "Neuropsychiatric Diagnostic Evaluation, Polysomnography (Sleep Study)",
+          "dosage_form": "Adaptogenic capsules (Ashwagandha-Brahmi)",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Dhumra Pana Aasakti",
+          "modern_name": "Vaping & Nicotine Habituation",
+          "dosha_pathogenesis": "Prana vaha tissue irritation",
+          "symptoms": "Persistent dry cough, throat irritation, severe nicotine cravings, chest tightness, restlessness",
+          "basic_diagnostics": "Pulse Oximetry, Fagerström Test for Nicotine Dependence (Vape-adapted), Lung Auscultation",
+          "advanced_diagnostics": "Quantitative Urine Cotinine/Nicotine Level, High-Resolution Chest CT (HRCT for EVALI), Spirometry",
+          "dosage_form": "De-addiction herbal formulations (Yashtimadhu sticks/sprays)",
+          "commercial_potential": "Niche Growth"
+        }
+      ]
+    },
+    {
+      "id": "young_adults",
+      "name": "Young Adults (20 - 30 Years)",
+      "focus": "Lifestyle metabolic protection, spinal health, and liver detoxification",
+      "diseases": [
+        {
+          "ayurvedic_name": "Avarodha Prameha",
+          "modern_name": "Early-Onset Prediabetes",
+          "dosha_pathogenesis": "Kleda accumulation in Meda and Mutra",
+          "symptoms": "Often silent; mild post-meal fatigue, slow healing of minor cuts, increased thirst",
+          "basic_diagnostics": "Fasting Plasma Glucose (100–125 mg/dL), HbA1c (5.7–6.4%)",
+          "advanced_diagnostics": "75g 2-Hour OGTT (140–199 mg/dL), Fasting Serum Insulin, High-Sensitivity CRP (hs-CRP)",
+          "dosage_form": "Vijaysar and Gymnema standardized capsules",
+          "commercial_potential": "Massive Volume"
+        },
+        {
+          "ayurvedic_name": "Raktagata Vata",
+          "modern_name": "Hyperhomocysteinemia & Vascular Stress",
+          "dosha_pathogenesis": "Vata vitiation in circulation (Rakta)",
+          "symptoms": "Unexplained fatigue, premature venous thrombosis (DVT), early exertional chest tightness",
+          "basic_diagnostics": "Fasting Plasma Homocysteine, Routine Lipid Profile, Complete Blood Count",
+          "advanced_diagnostics": "MTHFR Gene Mutation Analysis (C677T/A1298C), Serum Vitamin B12 & Methylmalonic Acid",
+          "dosage_form": "Arjuna and Guggulu cardio-vascular tablets",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Greeva Stambha",
+          "modern_name": "Cervical Spondylosis & Carpal Tunnel (Tech Neck/Wrist)",
+          "dosha_pathogenesis": "Localized Vata stagnation in Asthi-Sandhi",
+          "symptoms": "Neck stiffness, radiating arm pain, numbness/tingling in thumb and index/middle fingers, weak grip",
+          "basic_diagnostics": "Physical Provocative Tests (Phalen’s, Tinel’s, Spurling’s), Cervical Spine X-ray",
+          "advanced_diagnostics": "Nerve Conduction Studies (NCS) & EMG, Cervical Spine MRI, High-Resolution Median Nerve Ultrasound",
+          "dosage_form": "Mahanarayan Taila, specialized anti-pain patches",
+          "commercial_potential": "High Volume"
+        },
+        {
+          "ayurvedic_name": "Oja Kshaya",
+          "modern_name": "Vitamin Deficiencies & Chronic Fatigue",
+          "dosha_pathogenesis": "Ojas depletion (Dhatu under-nutrition)",
+          "symptoms": "Chronic brain fog, exhaustion, peripheral paresthesias (tingling), hair thinning, brittle nails",
+          "basic_diagnostics": "CBC, Vitamin D (25-OH), Vitamin B12, Serum Ferritin & Iron Studies",
+          "advanced_diagnostics": "Methylmalonic Acid (MMA), Red Blood Cell (RBC) Folate, Active B12 (Holotranscobalamin)",
+          "dosage_form": "Shilajit resin capsules, multi-vitamin Rasayana",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Yakrit Vriddhi",
+          "modern_name": "Early Non-Alcoholic Fatty Liver Disease (NAFLD)",
+          "dosha_pathogenesis": "Rakta-Meda overload in Yakrit",
+          "symptoms": "Silent; mild discomfort in the upper right abdomen, persistent fatigue",
+          "basic_diagnostics": "Liver Function Tests (ALT/AST), Abdominal Ultrasound, Fasting Lipid Panel",
+          "advanced_diagnostics": "Transient Elastography (FibroScan), FIB-4 Score, Magnetic Resonance Elastography (MRE), Liver Biopsy",
+          "dosage_form": "Kutki and Kalmegh liver-protective syrups",
+          "commercial_potential": "High Margin"
+        }
+      ]
+    },
+    {
+      "id": "established_adults",
+      "name": "Established Adults (30 - 40 Years)",
+      "focus": "Chronic disease onset prevention (Hypertension, Diabetes, NASH, Thyroid)",
+      "diseases": [
+        {
+          "ayurvedic_name": "Rakta Chapa Vriddhi",
+          "modern_name": "Essential Hypertension",
+          "dosha_pathogenesis": "Vyan Vata and Rakta pressure elevation",
+          "symptoms": "Silent ('Silent Killer'); morning occipital headaches, lightheadedness, occasional blurred vision",
+          "basic_diagnostics": "In-Office Blood Pressure (>=130/80 mmHg), Urinalysis, Serum Creatinine",
+          "advanced_diagnostics": "24-Hour Ambulatory Blood Pressure Monitoring (ABPM), Echocardiogram (LVH assessment), Renal Artery Doppler",
+          "dosage_form": "Sarpagandha and Arjuna standardized tablets",
+          "commercial_potential": "High Volume"
+        },
+        {
+          "ayurvedic_name": "Sthoulya-Janya Prameha",
+          "modern_name": "Type 2 Diabetes Mellitus",
+          "dosha_pathogenesis": "Advanced Meda and Majja dhatu corruption",
+          "symptoms": "Polyuria (excessive urination), polydipsia (excessive thirst), polyphagia, sudden weight loss",
+          "basic_diagnostics": "Fasting Glucose (>=126 mg/dL), Random Glucose (>=200 mg/dL), HbA1c (>=6.5%)",
+          "advanced_diagnostics": "Urine Albumin-to-Creatinine Ratio (uACR), Islet Autoantibodies (Anti-GAD), Continuous Glucose Monitoring (CGM)",
+          "dosage_form": "Proprietary multi-herb anti-diabetic tablets",
+          "commercial_potential": "Massive Volume"
+        },
+        {
+          "ayurvedic_name": "Yakritodara / NASH",
+          "modern_name": "Non-Alcoholic Steatohepatitis & Fibrosis",
+          "dosha_pathogenesis": "Yakrit tissue inflammation and fat deposition",
+          "symptoms": "Progressive fatigue, persistent right upper quadrant ache, hepatomegaly",
+          "basic_diagnostics": "Elevated Transaminases (ALT/AST), Abdominal Ultrasound, Platelet Count",
+          "advanced_diagnostics": "FibroScan (CAP & Liver Stiffness E-score), MR Elastography, FibroTest Panel, Liver Biopsy",
+          "dosage_form": "Silymarin-integrated classical hepatoprotectives",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Galaganda",
+          "modern_name": "Hypothyroidism & Thyroid Imbalances",
+          "dosha_pathogenesis": "Kapha-Meda blockage in Gala srotas",
+          "symptoms": "Unexplained weight gain, cold intolerance, constipation, dry skin, coarse hair, slurred thought processes",
+          "basic_diagnostics": "Serum TSH (Elevated in primary), Free T4",
+          "advanced_diagnostics": "Anti-Thyroid Peroxidase (Anti-TPO) Antibodies, Anti-Thyroglobulin (Anti-Tg), Thyroid Ultrasound",
+          "dosage_form": "Kanchanar Guggulu specialized tablets",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Mukha Arbuda",
+          "modern_name": "Oral Submucous Fibrosis (Pre-Cancerous)",
+          "dosha_pathogenesis": "Rakta-Mamsa tissue hardening from toxins",
+          "symptoms": "Progressive restriction in opening the mouth (trismus), severe burning sensation with spicy food",
+          "basic_diagnostics": "Clinical Exam with Calipers (Inter-incisal distance measurement), Mucosal Palpation",
+          "advanced_diagnostics": "Incisional Tissue Biopsy, Toluidine Blue Vital Staining, Tissue Autofluorescence (VELscope)",
+          "dosage_form": "Specialized anti-fibrotic herbal extracts/drops",
+          "commercial_potential": "Specialized Niche"
+        }
+      ]
+    },
+    {
+      "id": "middle_age",
+      "name": "Middle Age & Transition (40 - 50 Years)",
+      "focus": "Cardiovascular protection, menopausal management, and joint degeneration",
+      "diseases": [
+        {
+          "ayurvedic_name": "Dhamani Pratichaya",
+          "modern_name": "Accelerated Atherosclerosis & CAD",
+          "dosha_pathogenesis": "Avarodha in Dhamani via Meda plaque",
+          "symptoms": "Exertional chest pressure (angina), shortness of breath, pain radiating to jaw/left arm",
+          "basic_diagnostics": "Resting 12-Lead ECG, Lipid Panel (ApoB, LDL-C), Exercise Treadmill Test (TMT)",
+          "advanced_diagnostics": "Coronary Calcium Scoring (CAC), Coronary CT Angiography (CCTA), Invasive Coronary Angiography",
+          "dosage_form": "High-potency Guggulu and antioxidant capsules",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Rajonivritti Vikara",
+          "modern_name": "Perimenopause & Menopausal Syndrome",
+          "dosha_pathogenesis": "Vata aggravation due to Dhatu depletion",
+          "symptoms": "Hot flashes, night sweats, menstrual irregularity, vaginal dryness, mood swings, sleep loss",
+          "basic_diagnostics": "Clinical Symptom Questionnaire, Serum FSH, Serum Estradiol",
+          "advanced_diagnostics": "Bone Mineral Density DXA Scan, Transvaginal Ultrasound (Endometrial thickness evaluation)",
+          "dosage_form": "Shatavari based phytoestrogen capsules",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Sandhigata Vata",
+          "modern_name": "Knee Osteoarthritis",
+          "dosha_pathogenesis": "Vata localization in Sandhi (cartilage wear)",
+          "symptoms": "Deep knee pain during activity, morning stiffness lasting <30 mins, joint grinding (crepitus)",
+          "basic_diagnostics": "Physical Exam (Joint line tenderness & effusion), Weight-Bearing Knee Radiographs",
+          "advanced_diagnostics": "Knee Joint MRI, Synovial Fluid Analysis (Rule out gout/infection), Diagnostic Arthroscopy",
+          "dosage_form": "Shallaki and Guggulu joint support tablets",
+          "commercial_potential": "Massive Volume"
+        },
+        {
+          "ayurvedic_name": "Kati Stambha",
+          "modern_name": "Lumbar Disc Degeneration & Spinal Strain",
+          "dosha_pathogenesis": "Kati pradesha Vata imbalance",
+          "symptoms": "Low back pain, sciatica (pain shooting down leg), leg numbness, pain worse when sitting",
+          "basic_diagnostics": "Neurological Exam (Straight Leg Raise test), Lumbar Spine Radiographs (X-rays)",
+          "advanced_diagnostics": "Lumbar Spine MRI, Electromyography (EMG) & Nerve Conduction Velocity (NCV), CT Myelogram",
+          "dosage_form": "Specialized warm liniments and muscle relaxants",
+          "commercial_potential": "High Volume"
+        }
+      ]
+    },
+    {
+      "id": "seniors",
+      "name": "Pre-Senior & Senior (50 - 60+ Years)",
+      "focus": "Multi-morbidity management, neuropathy, bone health, stroke & oncology care",
+      "diseases": [
+        {
+          "ayurvedic_name": "Mutravaha Srotodushti",
+          "modern_name": "Early Chronic Kidney Disease (CKD)",
+          "dosha_pathogenesis": "Basti filtration channel weakness",
+          "symptoms": "Silent; mild peripheral edema (swollen ankles), frothy/foamy urine, nocturia, elevated BP",
+          "basic_diagnostics": "Serum Creatinine with eGFR calculation, Blood Urea Nitrogen (BUN), Urine Dipstick",
+          "advanced_diagnostics": "Urine Albumin-to-Creatinine Ratio (uACR), Renal Ultrasound, Renal Biopsy",
+          "dosage_form": "Punarnava and Gokshura concentrated syrups",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Prameha Upadrava",
+          "modern_name": "Diabetic Neuropathy & Microvascular Complications",
+          "dosha_pathogenesis": "Vata damage to Sukshma srotas",
+          "symptoms": "'Stocking-glove' numbness, burning pain in feet, blurred vision, gastroparesis",
+          "basic_diagnostics": "10g Semmes-Weinstein Monofilament Test, Dilated Fundoscopy, Urine Protein",
+          "advanced_diagnostics": "Nerve Conduction Studies (NCS), Optical Coherence Tomography (OCT Retina), Autonomic Function Tests",
+          "dosage_form": "Rasayana nerve-rejuvenating softgels/capsules",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Pakshaghata",
+          "modern_name": "Ischemic Stroke & Transient Ischemic Attacks",
+          "dosha_pathogenesis": "Severe Vata dominance in Shiras / brain",
+          "symptoms": "FAST signs: Facial drooping, Arm weakness, Speech difficulty, sudden imbalance/loss of vision",
+          "basic_diagnostics": "Emergency Non-Contrast Brain CT, Blood Glucose, Coagulation Profile (PT/INR, aPTT), ECG",
+          "advanced_diagnostics": "Diffusion-Weighted Brain MRI (DWI), Carotid Doppler Ultrasound, CT/MR Angiography, Holter Monitor",
+          "dosage_form": "Mahanarayan and Dashamoola neuro-rehab oils",
+          "commercial_potential": "Specialized High Value"
+        },
+        {
+          "ayurvedic_name": "Asthi Sushirata",
+          "modern_name": "Postmenopausal Osteoporosis",
+          "dosha_pathogenesis": "Asthi dhatu depletion via Vata",
+          "symptoms": "Silent until fracture; height loss >1.5 inches, stooped posture (kyphosis), low-impact fractures",
+          "basic_diagnostics": "Bone Density DXA Scan (T-Score <= -2.5), Serum Calcium, 25-OH Vitamin D",
+          "advanced_diagnostics": "Bone Turnover Markers (Serum CTx & P1NP), Vertebral Fracture Assessment (VFA)",
+          "dosage_form": "Organic calcium-bhasma complexes, Asthi Shrinkhala",
+          "commercial_potential": "High Margin"
+        },
+        {
+          "ayurvedic_name": "Tamaka Shwasa (Kshaya)",
+          "modern_name": "Chronic Obstructive Pulmonary Disease (COPD)",
+          "dosha_pathogenesis": "Prana vaha srotas tissue destruction",
+          "symptoms": "Chronic cough with sputum production, progressive exertional shortness of breath, wheezing",
+          "basic_diagnostics": "Post-Bronchodilator Spirometry (FEV1/FVC < 0.70), Pulse Oximetry, Chest Radiograph",
+          "advanced_diagnostics": "High-Resolution CT (HRCT) Chest, Arterial Blood Gas (ABG), DLCO Plethysmography, Alpha-1 Antitrypsin",
+          "dosage_form": "Vasa and Kantakari pulmonary extract syrups",
+          "commercial_potential": "High Volume"
+        },
+        {
+          "ayurvedic_name": "Arbuda",
+          "modern_name": "Organ Malignancies (Breast, Colon, Prostate)",
+          "dosha_pathogenesis": "Tridosha collapse and cellular proliferation",
+          "symptoms": "Lumps (breast), altered bowel habits or rectal bleeding (colon), urinary hesitancy (prostate)",
+          "basic_diagnostics": "Mammography (Breast), FIT / Occult Blood Stool Test (Colon), PSA + Digital Rectal Exam (Prostate)",
+          "advanced_diagnostics": "Tissue Biopsy & Histopathology, Multiparametric MRI, PET-CT Scan, Specific Tumor Markers (CEA, CA 15-3)",
+          "dosage_form": "High-end immunomodulatory Rasayana lines",
+          "commercial_potential": "Ultra-High Margin"
+        }
+      ]
+    }
+  ]
+}
