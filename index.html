@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500&f[]=cabinet-grotesk@800,700,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=7777">
+  <link rel="stylesheet" href="style.css?v=6666">
 </head>
 <body class="light-theme">
   
@@ -126,38 +126,76 @@
       <!-- HERO LANDING PAGE (#view-hero) -->
       <section id="view-hero" class="module-view active">
         
-        <!-- VERTICAL CARING GLOWING PILLAR NAVIGATION -->
-        <div class="caring-vertical-pillar-container">
-          <div class="caring-pillar-card">
+        <!-- INTERACTIVE YOURBIT CIRCULAR ORBIT LOGO WHEEL -->
+        <div class="yourbit-orbit-wheel-wrapper">
+          <div class="orbit-wheel-header">
+            <h2 class="caring-title">Your <span class="caring-acronym-badge">C • A • R • I • N • G</span> Orbit</h2>
+            <span class="caring-subtitle">Tap any node on the orbit logo</span>
+          </div>
+
+          <div class="yourbit-orbit-stage">
+            <!-- SVG Gradient Arc Ring & Center Person Figure -->
+            <svg class="orbit-ring-svg" viewBox="0 0 320 320">
+              <defs>
+                <linearGradient id="orbitArcGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#F59E0B" />
+                  <stop offset="20%" stop-color="#F97316" />
+                  <stop offset="40%" stop-color="#E11D48" />
+                  <stop offset="60%" stop-color="#2563EB" />
+                  <stop offset="80%" stop-color="#0D9488" />
+                  <stop offset="100%" stop-color="#10B981" />
+                </linearGradient>
+              </defs>
+              
+              <!-- Outer Connecting Orbit Ring Arc -->
+              <circle cx="160" cy="160" r="105" fill="none" stroke="url(#orbitArcGradient)" stroke-width="4" stroke-dasharray="10 4" opacity="0.85" />
+              <circle cx="160" cy="160" r="105" fill="none" stroke="#E2E8F0" stroke-width="2" opacity="0.3" />
+
+              <!-- Central Person Figure (Matches YOURBIT Logo) -->
+              <g transform="translate(136, 126) scale(1.1)">
+                <!-- Person Head -->
+                <circle cx="22" cy="12" r="7.5" fill="#0F172A" />
+                <!-- Person Arms & Torso -->
+                <path d="M 4 20 C 14 18, 18 28, 22 44 C 26 28, 30 18, 40 20 C 33 26, 27 35, 25 54 L 19 54 C 17 35, 11 26, 4 20 Z" fill="#0F172A" />
+              </g>
+            </svg>
+
+            <!-- 6 Interactive Circular Letter Nodes Positioned Along the Logo Orbit Ring -->
             
-            <div class="caring-row-item row-c" onclick="switchTab('view-care')">
-              <div class="caring-circle-node node-c">C</div>
-              <span class="caring-node-text">Care</span>
+            <!-- Node 1 (Top): C - Care (Amber Yellow) -->
+            <div class="orbit-wheel-node pos-c" onclick="switchTab('view-care')">
+              <div class="node-bubble bubble-c">C</div>
+              <span class="node-word-label word-c">Care</span>
             </div>
 
-            <div class="caring-row-item row-a" onclick="switchTab('view-activity')">
-              <div class="caring-circle-node node-a">A</div>
-              <span class="caring-node-text">Activity</span>
+            <!-- Node 2 (Top Right): A - Activity (Orange) -->
+            <div class="orbit-wheel-node pos-a" onclick="switchTab('view-activity')">
+              <div class="node-bubble bubble-a">A</div>
+              <span class="node-word-label word-a">Activity</span>
             </div>
 
-            <div class="caring-row-item row-r" onclick="switchTab('view-report')">
-              <div class="caring-circle-node node-r">R</div>
-              <span class="caring-node-text">Report</span>
+            <!-- Node 3 (Bottom Right): R - Report (Coral Red) -->
+            <div class="orbit-wheel-node pos-r" onclick="switchTab('view-report')">
+              <div class="node-bubble bubble-r">R</div>
+              <span class="node-word-label word-r">Report</span>
             </div>
 
-            <div class="caring-row-item row-i" onclick="switchTab('view-inspire')">
-              <div class="caring-circle-node node-i">I</div>
-              <span class="caring-node-text">Inspire</span>
+            <!-- Node 4 (Bottom): I - Inspire (Royal Blue) -->
+            <div class="orbit-wheel-node pos-i" onclick="switchTab('view-inspire')">
+              <div class="node-bubble bubble-i">I</div>
+              <span class="node-word-label word-i">Inspire</span>
             </div>
 
-            <div class="caring-row-item row-n" onclick="switchTab('view-nutrition')">
-              <div class="caring-circle-node node-n">N</div>
-              <span class="caring-node-text">Nutrition</span>
+            <!-- Node 5 (Bottom Left): N - Nutrition (Teal Cyan) -->
+            <div class="orbit-wheel-node pos-n" onclick="switchTab('view-nutrition')">
+              <div class="node-bubble bubble-n">N</div>
+              <span class="node-word-label word-n">Nutrition</span>
             </div>
 
-            <div class="caring-row-item row-g" onclick="switchTab('view-growth')">
-              <div class="caring-circle-node node-g">G</div>
-              <span class="caring-node-text">Growth</span>
+            <!-- Node 6 (Top Left): G - Growth (Lime Green) -->
+            <div class="orbit-wheel-node pos-g" onclick="switchTab('view-growth')">
+              <div class="node-bubble bubble-g">G</div>
+              <span class="node-word-label word-g">Growth</span>
             </div>
 
           </div>
@@ -756,6 +794,6 @@
 
   </div>
 
-  <script src="app.js?v=7777"></script>
+  <script src="app.js?v=6666"></script>
 </body>
 </html>
