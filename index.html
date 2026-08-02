@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500&f[]=cabinet-grotesk@800,700,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=8888">
+  <link rel="stylesheet" href="style.css?v=9999">
 </head>
 <body class="light-theme">
   
@@ -126,189 +126,100 @@
       <!-- HERO LANDING PAGE (#view-hero) -->
       <section id="view-hero" class="module-view active">
         
-        <!-- COMPACT CARING ORBIT NODE STRIP (ZERO-CLUTTER TOP HERO) -->
-        <div class="caring-orbit-strip">
-          <div class="orbit-strip-header">
-            <h2 class="caring-title">Your <span class="caring-acronym-badge">C • A • R • I • N • G</span> Orbit</h2>
-            <span class="caring-subtitle">1-Tap Direct Module Navigation</span>
-          </div>
-
-          <div class="caring-node-grid">
-            <div class="caring-node-pill card-c" onclick="switchTab('view-care')">
-              <div class="caring-letter-box">C</div>
-              <span class="node-label">Care</span>
-            </div>
-            <div class="caring-node-pill card-a" onclick="switchTab('view-activity')">
-              <div class="caring-letter-box">A</div>
-              <span class="node-label">Activity</span>
-            </div>
-            <div class="caring-node-pill card-r" onclick="switchTab('view-report')">
-              <div class="caring-letter-box">R</div>
-              <span class="node-label">Report</span>
-            </div>
-            <div class="caring-node-pill card-i" onclick="switchTab('view-inspire')">
-              <div class="caring-letter-box">I</div>
-              <span class="node-label">Inspire</span>
-            </div>
-            <div class="caring-node-pill card-n" onclick="switchTab('view-nutrition')">
-              <div class="caring-letter-box">N</div>
-              <span class="node-label">Nutrition</span>
-            </div>
-            <div class="caring-node-pill card-g" onclick="switchTab('view-growth')">
-              <div class="caring-letter-box">G</div>
-              <span class="node-label">Growth</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Welcome Hero Banner -->
-        <div class="hero-welcome-card">
-          <div class="welcome-left">
-            <span class="welcome-greeting">Good Morning, Rahul 👋</span>
-            <h1 class="hero-heading">Align Your Habits. Own Your Orbit.</h1>
-            <p class="hero-subtext">Preventive healthcare, diagnostic tracking, customized workouts, and nutrition tailored to your personal health ecosystem.</p>
-          </div>
-          <div class="welcome-score-widget">
-            <span class="score-widget-title">Orbit Health Score</span>
-            <div class="score-ring">
-              <span class="score-val" id="heroScoreNum">84</span>
-              <span class="score-max">/100</span>
-            </div>
-            <span class="score-status-chip">Optimal Orbit</span>
-          </div>
-        </div>
-
-        <!-- DETAILED CARING MODULES SECTION -->
-        <div class="caring-section">
-          <div class="caring-header">
-            <div>
-              <h2 class="caring-title">Explore <span class="caring-acronym-badge">C • A • R • I • N • G</span> Modules</h2>
-            </div>
-          </div>
-
-          <!-- Vertical Carousel Container -->
-          <div class="caring-vertical-carousel">
+        <!-- VERTICAL CARING GLOWING PILLAR NAVIGATION -->
+        <div class="caring-vertical-pillar-container">
+          <div class="caring-pillar-card">
             
-            <!-- Letter C: CARE -->
-            <div class="caring-card card-c" onclick="switchTab('view-care')">
-              <div class="caring-letter-box">
-                <span class="letter">C</span>
-              </div>
-              <div class="caring-card-body">
-                <div class="caring-module-name">Care & Guidance 🩺</div>
-                <div class="caring-module-desc">Book certified lab tests (MRI, Dexa, Blood markers), consult verified doctors, & buy health kits.</div>
-                <div class="caring-features-chips">
-                  <span>🧪 Lab Tests</span>
-                  <span>👨‍⚕️ Doctor Consult</span>
-                  <span>📦 Health Kits</span>
-                </div>
-              </div>
-              <div class="caring-card-arrow">➔</div>
+            <div class="caring-row-item row-c" onclick="switchTab('view-care')">
+              <div class="caring-circle-node node-c">C</div>
+              <span class="caring-node-text">Care</span>
             </div>
 
-            <!-- Letter A: ACTIVITY -->
-            <div class="caring-card card-a" onclick="switchTab('view-activity')">
-              <div class="caring-letter-box">
-                <span class="letter">A</span>
-              </div>
-              <div class="caring-card-body">
-                <div class="caring-module-name">Activity & Workouts 🏃</div>
-                <div class="caring-module-desc">Personalized exercise routines adapted to your age group, active workout timers, & step tracking.</div>
-                <div class="caring-features-chips">
-                  <span>👟 Steps</span>
-                  <span>🏋️ HIIT Workouts</span>
-                  <span>🧘 Yoga & Mobility</span>
-                </div>
-              </div>
-              <div class="caring-card-arrow">➔</div>
+            <div class="caring-row-item row-a" onclick="switchTab('view-activity')">
+              <div class="caring-circle-node node-a">A</div>
+              <span class="caring-node-text">Activity</span>
             </div>
 
-            <!-- Letter R: REPORT -->
-            <div class="caring-card card-r" onclick="switchTab('view-report')">
-              <div class="caring-letter-box">
-                <span class="letter">R</span>
-              </div>
-              <div class="caring-card-body">
-                <div class="caring-module-name">Report & Diagnostics 📊</div>
-                <div class="caring-module-desc">Interactive vitals trend tracker (BPM, BP, Sugar, BMI) and age-wise preventive disease guide.</div>
-                <div class="caring-features-chips">
-                  <span>❤️ Vitals Charts</span>
-                  <span>📄 Report Vault</span>
-                  <span>🧬 Age Matrix</span>
-                </div>
-              </div>
-              <div class="caring-card-arrow">➔</div>
+            <div class="caring-row-item row-r" onclick="switchTab('view-report')">
+              <div class="caring-circle-node node-r">R</div>
+              <span class="caring-node-text">Report</span>
             </div>
 
-            <!-- Letter I: INSPIRE -->
-            <div class="caring-card card-i" onclick="switchTab('view-inspire')">
-              <div class="caring-letter-box">
-                <span class="letter">I</span>
-              </div>
-              <div class="caring-card-body">
-                <div class="caring-module-name">Inspire & Community 💡</div>
-                <div class="caring-module-desc">Daily motivational quotes, real transformation case studies, & expert wellness articles.</div>
-                <div class="caring-features-chips">
-                  <span>💬 Daily Quote</span>
-                  <span>🌟 Success Stories</span>
-                  <span>📖 Expert Tips</span>
-                </div>
-              </div>
-              <div class="caring-card-arrow">➔</div>
+            <div class="caring-row-item row-i" onclick="switchTab('view-inspire')">
+              <div class="caring-circle-node node-i">I</div>
+              <span class="caring-node-text">Inspire</span>
             </div>
 
-            <!-- Letter N: NUTRITION -->
-            <div class="caring-card card-n" onclick="switchTab('view-nutrition')">
-              <div class="caring-letter-box">
-                <span class="letter">N</span>
-              </div>
-              <div class="caring-card-body">
-                <div class="caring-module-name">Nutrition & Diet 🥗</div>
-                <div class="caring-module-desc">Calorie budget breakdown, protein/carbs/fat macro ratios, 1-tap water logger, & meal tracker.</div>
-                <div class="caring-features-chips">
-                  <span>🥗 Meal Logger</span>
-                  <span>💧 Water Tracker</span>
-                  <span>⚖️ Macro Ratios</span>
-                </div>
-              </div>
-              <div class="caring-card-arrow">➔</div>
+            <div class="caring-row-item row-n" onclick="switchTab('view-nutrition')">
+              <div class="caring-circle-node node-n">N</div>
+              <span class="caring-node-text">Nutrition</span>
             </div>
 
-            <!-- Letter G: GROWTH -->
-            <div class="caring-card card-g" onclick="switchTab('view-growth')">
-              <div class="caring-letter-box">
-                <span class="letter">G</span>
-              </div>
-              <div class="caring-card-body">
-                <div class="caring-module-name">Growth & Habits 🌱</div>
-                <div class="caring-module-desc">Overall Health Score calculation, daily habit progress rings, and unlocked achievement badges.</div>
-                <div class="caring-features-chips">
-                  <span>🏆 Health Score</span>
-                  <span>✅ Habit Rings</span>
-                  <span>🎖️ Badges</span>
-                </div>
-              </div>
-              <div class="caring-card-arrow">➔</div>
+            <div class="caring-row-item row-g" onclick="switchTab('view-growth')">
+              <div class="caring-circle-node node-g">G</div>
+              <span class="caring-node-text">Growth</span>
             </div>
 
           </div>
         </div>
 
-        <!-- Welcome Hero Banner -->
-        <div class="hero-welcome-card">
-          <div class="welcome-left">
-            <span class="welcome-greeting">Good Morning, Rahul 👋</span>
-            <h1 class="hero-heading">Align Your Habits. Own Your Orbit.</h1>
-            <p class="hero-subtext">Preventive healthcare, diagnostic tracking, customized workouts, and nutrition tailored to your personal health ecosystem.</p>
-          </div>
-          <div class="welcome-score-widget">
-            <span class="score-widget-title">Orbit Health Score</span>
-            <div class="score-ring">
-              <span class="score-val" id="heroScoreNum">84</span>
-              <span class="score-max">/100</span>
+        <!-- CIRCULAR HEALTH SCORE METER SECTION -->
+        <div class="hero-score-ring-container">
+          <div class="circular-score-wrapper">
+            <svg class="score-svg" viewBox="0 0 120 120">
+              <circle class="score-svg-bg" cx="60" cy="60" r="50"></circle>
+              <circle class="score-svg-fill" cx="60" cy="60" r="50" stroke-dasharray="314" stroke-dashoffset="47"></circle>
+            </svg>
+            <div class="score-inner-text">
+              <span class="score-percentage" id="heroScoreNum">85%</span>
+              <span class="score-label">Health Score</span>
             </div>
-            <span class="score-status-chip">Optimal Orbit</span>
           </div>
+          <div class="score-footer-title">Overall Health Score</div>
+        </div>
+
+        <!-- 2x2 DASHBOARD METRIC CARDS -->
+        <div class="hero-metrics-grid">
+          
+          <div class="metric-card" onclick="switchTab('view-activity')">
+            <div class="metric-card-header">
+              <span class="metric-name">Activity</span>
+              <span class="metric-icon">🏃</span>
+            </div>
+            <div class="metric-val">8,421 <span class="metric-unit">steps</span></div>
+            <div class="metric-progress-bar">
+              <div class="metric-progress-fill fill-green" style="width: 84%;"></div>
+            </div>
+          </div>
+
+          <div class="metric-card" onclick="switchTab('view-nutrition')">
+            <div class="metric-card-header">
+              <span class="metric-name">Nutrition</span>
+              <span class="metric-icon">🍎</span>
+            </div>
+            <div class="metric-val">1,850 <span class="metric-unit">kcal</span></div>
+            <div class="metric-progress-bar">
+              <div class="metric-progress-fill fill-teal" style="width: 70%;"></div>
+            </div>
+          </div>
+
+          <div class="metric-card" onclick="switchTab('view-report')">
+            <div class="metric-card-header">
+              <span class="metric-name">Report</span>
+              <span class="metric-icon">🧰</span>
+            </div>
+            <div class="metric-sub-label">Last Checkup:</div>
+            <div class="metric-val-sm">June 15th</div>
+          </div>
+
+          <div class="metric-card" onclick="switchTab('view-inspire')">
+            <div class="metric-card-header">
+              <span class="metric-name">Inspire</span>
+              <span class="metric-icon">💡</span>
+            </div>
+            <p class="metric-quote">"Align your habits to achieve your dream health."</p>
+          </div>
+
         </div>
 
         <!-- HERO BOTTOM HEALTH METER BAR -->
@@ -845,6 +756,6 @@
 
   </div>
 
-  <script src="app.js?v=8888"></script>
+  <script src="app.js?v=9999"></script>
 </body>
 </html>
