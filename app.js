@@ -422,6 +422,7 @@ function renderProducts() {
     <div class="card-item" style="display: flex; flex-direction: column;">
       <div style="width: 100%; height: 140px; background: #F8FAFC; border-radius: 12px; padding: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; border: 1px solid #F1F5F9; position: relative;">
         <span class="card-badge ${p.brand === 'Dragmans' ? 'badge-test' : 'badge-prod'}" style="position: absolute; top: 6px; left: 6px; z-index: 2;">${p.badge}</span>
+        <span class="card-badge" style="position: absolute; top: 6px; right: 6px; z-index: 2; background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0;">🏭 cGMP & USFDA</span>
         <img src="${p.img}" alt="${p.title}" style="max-height: 124px; max-width: 100%; object-fit: contain; border-radius: 6px;" loading="lazy">
       </div>
       <div class="card-title">${p.title}</div>
@@ -804,6 +805,7 @@ function renderNutritionSupplements(catFilter = 'all') {
     <div class="card-item" style="display: flex; flex-direction: column;">
       <div style="width: 100%; height: 140px; background: #F8FAFC; border-radius: 12px; padding: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; border: 1px solid #F1F5F9; position: relative;">
         <span class="card-badge ${p.brand === 'Dragmans' ? 'badge-test' : 'badge-prod'}" style="position: absolute; top: 6px; left: 6px; z-index: 2;">${p.badge}</span>
+        <span class="card-badge" style="position: absolute; top: 6px; right: 6px; z-index: 2; background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0;">🏭 cGMP & USFDA</span>
         <img src="${p.img}" alt="${p.title}" style="max-height: 124px; max-width: 100%; object-fit: contain; border-radius: 6px;" loading="lazy">
       </div>
       <div class="card-title">${p.title}</div>
