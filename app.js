@@ -1019,37 +1019,124 @@ function showToast(msg) {
   }
 }
 
-// 14. 6-Member Family Health Passports & Interactive Carousel Engine
-let familyProfiles = [null, null, null, null, null, null];
+// 14. 6-Member Dynamic Family Health Carousel Engine
+let familyProfiles = [null]; // Start with 1 member slot by default
 let activeFamilyIdx = 0;
 
-function switchFamilyMember(idx) {
-  activeFamilyIdx = idx;
+const AVATAR_COLORS = [
+  "avatar-blue", "avatar-pink", "avatar-amber", 
+  "avatar-purple", "avatar-teal", "avatar-emerald"
+];
+const AVATAR_ICONS = ["👤", "👤", "👤", "👤", "👤", "👤"];
+
+function renderFamilyCarouselCards() {
+  const track = document.getElementById("familyCarouselTrack");
+  if (!track) return;
+
+  let html = "";
   
-  // Highlight active slide in carousel
-  for (let i = 0; i < 6; i++) {
-    const slide = document.getElementById(`famSlide${i}`);
-    if (slide) {
-      if (i === idx) slide.classList.add("active");
-      else slide.classList.remove("active");
-    }
+  // Render existing member slots
+  familyProfiles.forEach((p, idx) => {
+    const isActive = idx === activeFamilyIdx;
+    const colorClass = AVATAR_COLORS[idx % AVATAR_COLORS.length];
+    const icon = AVATAR_ICONS[idx % AVATAR_ICONS.length];
+    const memberLabel = idx === 0 ? "Member 1 (Primary)" : `Member ${idx + 1}`;
+    const nameText = p && p.name ? p.name : `Member ${idx + 1} Profile`;
+    const statusText = p && p.name ? `✅ Saved (${p.age}y, ${p.blood})` : "⚡ Enter Health Details";
+    const statusColor = p && p.name ? "#10B981" : "var(--primary-accent)";
+
+    html += `
+      <div class="family-card-slide ${isActive ? 'active' : ''}" id="famSlide${idx}" onclick="switchFamilyMember(${idx})">
+        <div class="slide-avatar-badge ${colorClass}">${icon}</div>
+        <div class="slide-info">
+          <span class="slide-relation">${memberLabel}</span>
+          <h4 class="slide-name">${nameText}</h4>
+          <span class="slide-status" style="color: ${statusColor};">${statusText}</span>
+        </div>
+      </div>
+    `;
+  });
+
+  // Render "+ Add Member" button card if slots < 6
+  if (familyProfiles.length < 6) {
+    html += `
+      <div class="family-card-slide add-member-slide" onclick="addNewFamilyMemberSlot()">
+        <div class="slide-avatar-badge avatar-add">➕</div>
+        <div class="slide-info">
+          <span class="slide-relation">New Profile Slot</span>
+          <h4 class="slide-name">+ Add Member</h4>
+          <span class="slide-status" style="color: var(--primary-accent);">${6 - familyProfiles.length} Slots Available</span>
+        </div>
+      </div>
+    `;
   }
+
+  track.innerHTML = html;
+}
+
+function addNewFamilyMemberSlot() {
+  if (familyProfiles.length >= 6) {
+    showToast("⚠️ Maximum 6 Family Member Passports allowed!");
+    return;
+  }
+  
+  familyProfiles.push(null);
+  const newIdx = familyProfiles.length - 1;
+  saveFamilyProfilesToStorage();
+  switchFamilyMember(newIdx);
+  showToast(`➕ Added Member ${newIdx + 1} slot! Enter their details below.`);
+}
+
+function deleteActiveFamilyMember() {
+  if (activeFamilyIdx === 0) {
+    showToast("⚠️ Primary Member 1 profile cannot be deleted!");
+    return;
+  }
+
+  const name = familyProfiles[activeFamilyIdx]?.name || `Member ${activeFamilyIdx + 1}`;
+  familyProfiles.splice(activeFamilyIdx, 1);
+  saveFamilyProfilesToStorage();
+  
+  activeFamilyIdx = Math.max(0, activeFamilyIdx - 1);
+  renderFamilyCarouselCards();
+  switchFamilyMember(activeFamilyIdx);
+  showToast(`🗑️ Removed ${name} profile!`);
+}
+
+function switchFamilyMember(idx) {
+  if (idx < 0 || idx >= familyProfiles.length) idx = 0;
+  activeFamilyIdx = idx;
+
+  renderFamilyCarouselCards();
 
   const currentProfile = familyProfiles[idx];
   const form = document.getElementById("healthPassportForm");
   const summaryCard = document.getElementById("passportSummaryCard");
+  const delBtn = document.getElementById("btnDeleteMember");
+  const memberTag = document.getElementById("sumMemberTag");
+
+  if (delBtn) {
+    if (idx === 0) delBtn.style.display = "none";
+    else delBtn.style.display = "inline-block";
+  }
+
+  if (memberTag) {
+    memberTag.textContent = idx === 0 ? "PRIMARY MEMBER 1" : `MEMBER ${idx + 1} PROFILE`;
+  }
 
   if (currentProfile && currentProfile.name) {
-    // Fill form and render summary
     fillPassportFormFields(currentProfile);
     calcPassportBmi();
     renderHealthPassportSummary(currentProfile);
   } else {
-    // Empty form for new entry
     clearPassportFormFields();
     if (summaryCard) summaryCard.classList.add("hidden");
     if (form) form.classList.remove("hidden");
   }
+}
+
+function saveFamilyProfilesToStorage() {
+  localStorage.setItem("yb_family_profiles", JSON.stringify(familyProfiles));
 }
 
 function fillPassportFormFields(p) {
@@ -1126,38 +1213,20 @@ function saveHealthPassport() {
   };
 
   familyProfiles[activeFamilyIdx] = profile;
-  localStorage.setItem("yb_family_profiles", JSON.stringify(familyProfiles));
+  saveFamilyProfilesToStorage();
   
-  updateFamilyCarouselCardsUI();
+  renderFamilyCarouselCards();
   renderHealthPassportSummary(profile);
   showToast(`📑 Saved Health Passport for ${profile.name}!`);
-}
-
-function updateFamilyCarouselCardsUI() {
-  for (let i = 0; i < 6; i++) {
-    const p = familyProfiles[i];
-    const nameEl = document.getElementById(`famName${i}`);
-    const statusEl = document.getElementById(`famStatus${i}`);
-    
-    if (p && p.name) {
-      if (nameEl) nameEl.textContent = p.name;
-      if (statusEl) {
-        statusEl.textContent = `✅ Saved (${p.age}y, ${p.blood})`;
-        statusEl.style.color = "#10B981";
-      }
-    } else {
-      if (statusEl) {
-        statusEl.textContent = "➕ Tap to enter details";
-        statusEl.style.color = "var(--primary-accent)";
-      }
-    }
-  }
 }
 
 function renderHealthPassportSummary(profile) {
   const form = document.getElementById("healthPassportForm");
   const summaryCard = document.getElementById("passportSummaryCard");
   if (!summaryCard) return;
+
+  const headerName = document.getElementById("sumHeaderName");
+  if (headerName) headerName.textContent = profile.name;
 
   document.getElementById("sumName").textContent = profile.name;
   document.getElementById("sumAgeSex").textContent = `${profile.age} yrs, ${profile.gender}`;
@@ -1184,13 +1253,14 @@ function loadSavedFamilyProfiles() {
   const raw = localStorage.getItem("yb_family_profiles");
   if (raw) {
     try {
-      familyProfiles = JSON.parse(raw);
-      if (!Array.isArray(familyProfiles)) familyProfiles = [null, null, null, null, null, null];
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        familyProfiles = parsed;
+      }
     } catch (e) {
-      familyProfiles = [null, null, null, null, null, null];
+      familyProfiles = [null];
     }
   }
-  updateFamilyCarouselCardsUI();
   switchFamilyMember(0);
 }
 
