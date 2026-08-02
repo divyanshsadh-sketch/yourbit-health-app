@@ -257,32 +257,32 @@ p, .card-desc, input, textarea, .score-status, .hero-text p, .caring-subtitle, .
 .score-max { font-size: 0.7rem; opacity: 0.8; }
 .score-status-chip { font-size: 0.6rem; background: rgba(255, 255, 255, 0.25); padding: 2px 6px; border-radius: var(--radius-full); font-weight: 700; }
 
-/* CARING VERTICAL CAROUSEL */
-.caring-section { margin-bottom: 20px; width: 100%; }
-.caring-header { margin-bottom: 12px; }
-.caring-title { font-size: 1.05rem; font-weight: 800; color: var(--text-main); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px; }
-.caring-acronym-badge { font-size: 0.7rem; background: var(--emerald-light); color: var(--emerald); padding: 3px 8px; border-radius: var(--radius-full); border: 1px solid var(--border-emerald); font-weight: 800; }
-.caring-subtitle { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+/* CARING VERTICAL CAROUSEL (TOP FEATURED HERO) */
+.caring-section { margin-bottom: 24px; width: 100%; margin-top: 4px; }
+.caring-header { margin-bottom: 14px; }
+.caring-title { font-size: 1.15rem; font-weight: 800; color: var(--text-main); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+.caring-acronym-badge { font-size: 0.75rem; background: var(--emerald-light); color: var(--emerald); padding: 4px 10px; border-radius: var(--radius-full); border: 1px solid var(--border-emerald); font-weight: 800; letter-spacing: 1px; }
+.caring-subtitle { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
 
-.caring-vertical-carousel { display: flex; flex-direction: column; gap: 10px; width: 100%; }
-.caring-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 12px; display: flex; align-items: center; gap: 14px; cursor: pointer; transition: all 0.2s ease; box-shadow: var(--shadow-sm); width: 100%; }
-.caring-card:hover { transform: translateY(-2px); border-color: var(--emerald); box-shadow: var(--shadow-md); }
+.caring-vertical-carousel { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+.caring-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 14px 16px; display: flex; align-items: center; gap: 16px; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: var(--shadow-sm); width: 100%; position: relative; overflow: hidden; }
+.caring-card:hover, .caring-card:active { transform: translateY(-3px); border-color: var(--emerald); box-shadow: var(--shadow-md); }
 
-.caring-letter-box { width: 44px; height: 44px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900; color: white; flex-shrink: 0; }
-.card-c .caring-letter-box { background: linear-gradient(135deg, #059669, #10B981); }
-.card-a .caring-letter-box { background: linear-gradient(135deg, #EA580C, #F97316); }
-.card-r .caring-letter-box { background: linear-gradient(135deg, #0284C7, #06B6D4); }
-.card-i .caring-letter-box { background: linear-gradient(135deg, #4F46E5, #6366F1); }
-.card-n .caring-letter-box { background: linear-gradient(135deg, #0D9488, #14B8A6); }
-.card-g .caring-letter-box { background: linear-gradient(135deg, #E11D48, #F43F5E); }
+.caring-letter-box { width: 50px; height: 50px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.65rem; font-weight: 900; color: white; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); font-family: var(--font-heading); }
+.card-c .caring-letter-box { background: linear-gradient(135deg, #059669 0%, #10B981 100%); box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35); }
+.card-a .caring-letter-box { background: linear-gradient(135deg, #EA580C 0%, #F97316 100%); box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35); }
+.card-r .caring-letter-box { background: linear-gradient(135deg, #0284C7 0%, #06B6D4 100%); box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35); }
+.card-i .caring-letter-box { background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%); box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35); }
+.card-n .caring-letter-box { background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%); box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35); }
+.card-g .caring-letter-box { background: linear-gradient(135deg, #E11D48 0%, #F43F5E 100%); box-shadow: 0 4px 14px rgba(225, 29, 72, 0.35); }
 
 .caring-card-body { flex: 1; min-width: 0; padding-left: 2px; }
-.caring-module-name { font-size: 1.05rem; font-weight: 800; color: var(--text-main); line-height: 1.25; }
+.caring-module-name { font-size: 1.08rem; font-weight: 800; color: var(--text-main); line-height: 1.25; font-family: var(--font-heading); }
 
-.caring-module-desc { font-size: 0.72rem; color: var(--text-muted); margin: 3px 0 5px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.caring-features-chips { display: flex; gap: 4px; flex-wrap: wrap; }
-.caring-features-chips span { font-size: 0.63rem; font-weight: 600; background: var(--bg-elevated); color: var(--text-main); padding: 2px 6px; border-radius: var(--radius-full); }
-.caring-card-arrow { font-size: 1.1rem; color: var(--text-dim); transition: transform 0.2s ease; }
+.caring-module-desc { font-size: 0.76rem; color: var(--text-muted); margin: 4px 0 6px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.4; }
+.caring-features-chips { display: flex; gap: 5px; flex-wrap: wrap; }
+.caring-features-chips span { font-size: 0.65rem; font-weight: 700; background: var(--bg-elevated); color: var(--text-main); padding: 3px 8px; border-radius: var(--radius-full); border: 1px solid var(--border-subtle); }
+.caring-card-arrow { font-size: 1.2rem; color: var(--emerald); font-weight: 800; transition: transform 0.2s ease; }
 
 /* HERO BOTTOM HEALTH METER BAR */
 .hero-healthmeter-container { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 14px; box-shadow: var(--shadow-sm); width: 100%; }
