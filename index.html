@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body class="light-theme">
   
@@ -406,6 +406,36 @@
           <button class="btn btn-secondary" id="btnLogVitals">✏️ Log New Vitals</button>
         </div>
 
+        <!-- PROMINENT DISEASE & SYMPTOM DIAGNOSTIC SEARCH ENGINE -->
+        <div class="disease-search-hero-card" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); color: white; border-radius: var(--radius-lg); padding: 18px; margin-bottom: 16px; box-shadow: var(--shadow-md);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <span style="font-size: 0.7rem; font-weight: 800; background: rgba(5, 150, 105, 0.25); color: #A7F3D0; padding: 3px 8px; border-radius: var(--radius-full); border: 1px solid rgba(167, 243, 208, 0.3);">
+              🔍 CLINICAL DIAGNOSTIC SEARCH ENGINE
+            </span>
+            <span style="font-size: 0.65rem; color: #94A3B8;">35+ Clinical Profiles</span>
+          </div>
+
+          <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 4px; color: white;">Search Any Health Issue or Disease</h3>
+          <p style="font-size: 0.75rem; color: #94A3B8; margin-bottom: 12px;">Type your symptoms (e.g. fever, joint pain, thyroid), disease name, or medical term to view recommended basic & advanced diagnostics.</p>
+
+          <!-- Big Search Bar -->
+          <div style="position: relative; margin-bottom: 10px;">
+            <input type="text" id="diseaseSearchInput" class="form-input" placeholder="🔍 Type health issue, symptom (e.g. Diabetes, PCOS, Back Pain, Thyroid)..." oninput="filterDiseaseExplorer()" style="padding: 12px 14px; font-size: 0.9rem; border-radius: var(--radius-md); border: 2px solid #334155; background: #0F172A; color: white;">
+          </div>
+
+          <!-- Quick Suggestion Search Chips -->
+          <div style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; white-space: nowrap;">
+            <span style="font-size: 0.65rem; color: #94A3B8; font-weight: 700; align-self: center;">Popular:</span>
+            <button class="pill" onclick="quickSearchDisease('Diabetes')" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">🩸 Diabetes</button>
+            <button class="pill" onclick="quickSearchDisease('Thyroid')" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">🦋 Thyroid</button>
+            <button class="pill" onclick="quickSearchDisease('PCOS')" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">🌸 PCOS</button>
+            <button class="pill" onclick="quickSearchDisease('Hypertension')" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">❤️ Blood Pressure</button>
+            <button class="pill" onclick="quickSearchDisease('Cervical')" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">💻 Neck/Back Pain</button>
+            <button class="pill" onclick="quickSearchDisease('Fever')" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">🤒 Fever</button>
+            <button class="pill" onclick="quickSearchDisease('Joint')" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">🦴 Joint Pain</button>
+          </div>
+        </div>
+
         <div class="chart-card">
           <div class="chart-header">
             <h3>Vitals Trend Tracker</h3>
@@ -421,17 +451,13 @@
           </div>
         </div>
 
-        <!-- DIAGNOSTIC & MEDICAL TERMS INTELLIGENCE EXPLORER MODULE -->
+        <!-- DIAGNOSTIC & MEDICAL TERMS INTELLIGENCE EXPLORER RESULTS -->
         <div class="section-header mt-4">
-          <h3>Diagnostic & Health Terms Intelligence Explorer 🧬</h3>
+          <h3>Diagnostic & Health Terms Intelligence Matrix 🧬</h3>
           <span class="section-tag">Ayurvedic & Clinical Diagnostics</span>
         </div>
 
         <div class="disease-explorer-card">
-          <div class="disease-search-bar-wrapper" style="margin-bottom: 12px;">
-            <input type="text" id="diseaseSearchInput" class="form-input" placeholder="🔍 Search by health issue, symptom (e.g. fever, joint pain, thyroid), or medical term..." oninput="filterDiseaseExplorer()">
-          </div>
-
           <div class="filter-pills" id="diseaseAgeFilterPills" style="margin-bottom: 14px;">
             <button class="pill active" onclick="setDiseaseAgeFilter('all', this)">All Ages</button>
             <button class="pill" onclick="setDiseaseAgeFilter('infancy', this)">Infancy (0-1y)</button>
@@ -700,6 +726,6 @@
 
   </div>
 
-  <script src="app.js?v=2"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
