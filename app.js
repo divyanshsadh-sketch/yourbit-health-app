@@ -390,28 +390,28 @@ function renderDoctors() {
   `).join("");
 }
 
-// 20 Authentic Health & Medicine Supplements from Dragmans (dragmans.com) & Cosynee Life (mycosynee.com)
+// 20 Authentic Health & Medicine Supplements with Official Product Photos (Dragmans & Cosynee Life)
 const HEALTH_MEDICINES_CATALOG = [
-  { id: "p1", title: "DR AGMANS Ashwagandha Organic KSM-66", desc: "Reduces cortisol stress, balances Vata dosha, and enhances deep REM sleep & stamina.", price: 699, orig: 1200, brand: "Dragmans", cat: "sleep", badge: "Dragmans Official" },
-  { id: "p2", title: "CosyneeLife Magnesium Glycinate 550mg", desc: "High-absorption chelated magnesium for nerve relaxation, muscle recovery & deep sleep.", price: 799, orig: 1350, brand: "Cosynee Life", cat: "sleep", badge: "Cosynee Official" },
-  { id: "p3", title: "DR AGMANS Shilajit Resin & Capsules", desc: "80+ trace minerals & Fulvic acid for physical stamina, energy boost & vitality.", price: 999, orig: 1800, brand: "Dragmans", cat: "vitality", badge: "Dragmans Official" },
-  { id: "p4", title: "CosyneeLife Shilajit + Ashwagandha Complex", desc: "Synergistic adaptogenic formulation for cellular rejuvenation, muscle growth & endurance.", price: 1299, orig: 2100, brand: "Cosynee Life", cat: "vitality", badge: "Cosynee Official" },
-  { id: "p5", title: "DR AGMANS Berberine Extract 500mg", desc: "AMPK enzyme activator for healthy blood sugar metabolism, HbA1c control & lipid balance.", price: 899, orig: 1500, brand: "Dragmans", cat: "vitality", badge: "Dragmans Official" },
-  { id: "p6", title: "CosyneeLife Neem + Piperine Skin & Detox Boost", desc: "Azadirachta Indica leaf extract with bio-enhancing Piperine for clear skin & blood purification.", price: 649, orig: 1100, brand: "Cosynee Life", cat: "detox", badge: "Cosynee Official" },
-  { id: "p7", title: "DR AGMANS Curcumin Extract + BioPerine", desc: "95% Curcuminoids for joint pain relief, anti-inflammatory defense & tissue repair.", price: 749, orig: 1300, brand: "Dragmans", cat: "vitamins", badge: "Dragmans Official" },
-  { id: "p8", title: "CosyneeLife Aloe Gut Soothe+", desc: "Pure Aloe Vera whole leaf & fresh gel extract for gut lining repair, GERD & acidity relief.", price: 599, orig: 999, brand: "Cosynee Life", cat: "gut", badge: "Cosynee Official" },
-  { id: "p9", title: "DR AGMANS Chlorophyll Liquid Detox Drops", desc: "Internal body deodorant & alkalizing drops for liver detoxification & cellular oxygenation.", price: 599, orig: 950, brand: "Dragmans", cat: "detox", badge: "Dragmans Official" },
-  { id: "p10", title: "CosyneeLife Triphala Detox+ Capsules", desc: "Amalaki, Haritaki & Bibhitaki digestive cleanser for gentle bowel regularity & gut flora.", price: 499, orig: 850, brand: "Cosynee Life", cat: "gut", badge: "Cosynee Official" },
-  { id: "p11", title: "DR AGMANS Vitamin D3 + K2 (MK-7) Drops", desc: "High-bioavailability drops for bone calcium absorption, cardiovascular health & immunity.", price: 549, orig: 999, brand: "Dragmans", cat: "vitamins", badge: "Dragmans Official" },
-  { id: "p12", title: "CosyneeLife Melatonin, Magnesium & Zinc", desc: "Triple-action non-habit-forming sleep matrix for circadian rhythm regulation & rest.", price: 699, orig: 1200, brand: "Cosynee Life", cat: "sleep", badge: "Cosynee Official" },
-  { id: "p13", title: "DR AGMANS Colostrum Immune Powder", desc: "Pure bovine colostrum rich in IgG antibodies for leaky gut repair & immune defense.", price: 1199, orig: 1999, brand: "Dragmans", cat: "gut", badge: "Dragmans Official" },
-  { id: "p14", title: "CosyneeLife Holy Basil (Tulsi) Extract", desc: "Eugenol & Rosmarinic acid adaptogen for lung health, respiratory protection & immunity.", price: 449, orig: 799, brand: "Cosynee Life", cat: "vitamins", badge: "Cosynee Official" },
-  { id: "p15", title: "DR AGMANS Boswellia Serrata Joint Support", desc: "Boswellic acid 65% extract for cartilage preservation, arthritis pain & stiffness relief.", price: 849, orig: 1400, brand: "Dragmans", cat: "vitamins", badge: "Dragmans Official" },
-  { id: "p16", title: "DR AGMANS EPA-DHA Triple Strength Fish Oil", desc: "1000mg Omega-3 (540mg EPA / 360mg DHA) for cardiac protection & brain health.", price: 899, orig: 1600, brand: "Dragmans", cat: "vitamins", badge: "Dragmans Official" },
-  { id: "p17", title: "DR AGMANS Multi-Strain Digestive Enzymes", desc: "Protease, Amylase, Lipase & Lactase complex for heavy meal absorption & bloating relief.", price: 649, orig: 1150, brand: "Dragmans", cat: "gut", badge: "Dragmans Official" },
-  { id: "p18", title: "DR AGMANS Magnesium L-Threonate Brain Focus", desc: "Crosses blood-brain barrier for cognitive memory, synaptic density & neuro-protection.", price: 1099, orig: 1850, brand: "Dragmans", cat: "sleep", badge: "Dragmans Official" },
-  { id: "p19", title: "DR AGMANS Rhodiola Rosea Stamina Extract", desc: "3% Rosavins adaptogen for physical endurance, anti-fatigue & mental alertness.", price: 799, orig: 1350, brand: "Dragmans", cat: "vitality", badge: "Dragmans Official" },
-  { id: "p20", title: "DR AGMANS Creatine Monohydrate Pure Powder", desc: "100% pure pharmaceutical-grade creatine for muscle strength growth & ATP synthesis.", price: 899, orig: 1500, brand: "Dragmans", cat: "vitality", badge: "Dragmans Official" }
+  { id: "p1", title: "DR AGMANS Ashwagandha Organic KSM-66", desc: "Reduces cortisol stress, balances Vata dosha, and enhances deep REM sleep & stamina.", price: 699, orig: 1200, brand: "Dragmans", cat: "sleep", badge: "Dragmans Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HQB09X8Y00Y7N1A844B2ZZ78%2Fassets%2F1709789951787-ASHWAGANDHA%20copy.jpg" },
+  { id: "p2", title: "CosyneeLife Magnesium Glycinate 550mg", desc: "High-absorption chelated magnesium for nerve relaxation, muscle recovery & deep sleep.", price: 799, orig: 1350, brand: "Cosynee Life", cat: "sleep", badge: "Cosynee Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HREYD3KVJ9M8F9M7YYDB9K2R/assets/29f4d704-f9f1-42e9-8099-74fa63fb9d92.jpg" },
+  { id: "p3", title: "DR AGMANS Shilajit Resin & Capsules", desc: "80+ trace minerals & Fulvic acid for physical stamina, energy boost & vitality.", price: 999, orig: 1800, brand: "Dragmans", cat: "vitality", badge: "Dragmans Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HQB09X8Y00Y7N1A844B2ZZ78%2Fassets%2F1709287332765-SHILAJIT%20copy.jpg" },
+  { id: "p4", title: "CosyneeLife Shilajit + Ashwagandha Complex", desc: "Synergistic adaptogenic formulation for cellular rejuvenation, muscle growth & endurance.", price: 1299, orig: 2100, brand: "Cosynee Life", cat: "vitality", badge: "Cosynee Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HREYD3KVJ9M8F9M7YYDB9K2R/assets/87541821-34c3-42c9-aa75-e83daf13772c.jpg" },
+  { id: "p5", title: "DR AGMANS Berberine Extract 500mg", desc: "AMPK enzyme activator for healthy blood sugar metabolism, HbA1c control & lipid balance.", price: 899, orig: 1500, brand: "Dragmans", cat: "vitality", badge: "Dragmans Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HQB09X8Y00Y7N1A844B2ZZ78%2Fassets%2F1709730723537-BERBERINE%20CAPSULES%20copy.jpg" },
+  { id: "p6", title: "CosyneeLife Neem + Piperine Skin & Detox Boost", desc: "Azadirachta Indica leaf extract with bio-enhancing Piperine for clear skin & blood purification.", price: 649, orig: 1100, brand: "Cosynee Life", cat: "detox", badge: "Cosynee Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HREYD3KVJ9M8F9M7YYDB9K2R/assets/e77b7f99-186a-4bb0-ad8b-e706b4f58857.png" },
+  { id: "p7", title: "DR AGMANS Curcumin Extract + BioPerine", desc: "95% Curcuminoids for joint pain relief, anti-inflammatory defense & tissue repair.", price: 749, orig: 1300, brand: "Dragmans", cat: "vitamins", badge: "Dragmans Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HQB09X8Y00Y7N1A844B2ZZ78%2Fassets%2F1709727484553-curcumin%20extract%20copy.jpg" },
+  { id: "p8", title: "CosyneeLife Aloe Gut Soothe+", desc: "Pure Aloe Vera whole leaf & fresh gel extract for gut lining repair, GERD & acidity relief.", price: 599, orig: 999, brand: "Cosynee Life", cat: "gut", badge: "Cosynee Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HREYD3KVJ9M8F9M7YYDB9K2R/assets/0b0085b4-dbed-4d83-b37a-603c7fdc1ae0.jpg" },
+  { id: "p9", title: "DR AGMANS Chlorophyll Liquid Detox Drops", desc: "Internal body deodorant & alkalizing drops for liver detoxification & cellular oxygenation.", price: 599, orig: 950, brand: "Dragmans", cat: "detox", badge: "Dragmans Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HQB09X8Y00Y7N1A844B2ZZ78%2Fassets%2F1709787378380-CHLOROPHYL%20DROPS%20copy.jpg" },
+  { id: "p10", title: "CosyneeLife Triphala Detox+ Capsules", desc: "Amalaki, Haritaki & Bibhitaki digestive cleanser for gentle bowel regularity & gut flora.", price: 499, orig: 850, brand: "Cosynee Life", cat: "gut", badge: "Cosynee Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HREYD3KVJ9M8F9M7YYDB9K2R/assets/e006d086-3dc5-4d67-89e0-cabe758afc85.png" },
+  { id: "p11", title: "DR AGMANS Vitamin D3 + K2 (MK-7) Drops", desc: "High-bioavailability drops for bone calcium absorption, cardiovascular health & immunity.", price: 549, orig: 999, brand: "Dragmans", cat: "vitamins", badge: "Dragmans Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HQB09X8Y00Y7N1A844B2ZZ78%2Fassets%2F1709285735580-VITAMIN%20D3%20K2%20copy.jpg" },
+  { id: "p12", title: "CosyneeLife Melatonin, Magnesium & Zinc", desc: "Triple-action non-habit-forming sleep matrix for circadian rhythm regulation & rest.", price: 699, orig: 1200, brand: "Cosynee Life", cat: "sleep", badge: "Cosynee Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HREYD3KVJ9M8F9M7YYDB9K2R/assets/6ecce14f-2c24-460e-9925-297b1d75e9ab.png" },
+  { id: "p13", title: "DR AGMANS Colostrum Immune Powder", desc: "Pure bovine colostrum rich in IgG antibodies for leaky gut repair & immune defense.", price: 1199, orig: 1999, brand: "Dragmans", cat: "gut", badge: "Dragmans Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HQB09X8Y00Y7N1A844B2ZZ78%2Fassets%2F1709801084157-COLOSTRUM%20POWDER%20copy.jpg" },
+  { id: "p14", title: "CosyneeLife Holy Basil (Tulsi) Extract", desc: "Eugenol & Rosmarinic acid adaptogen for lung health, respiratory protection & immunity.", price: 449, orig: 799, brand: "Cosynee Life", cat: "vitamins", badge: "Cosynee Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HREYD3KVJ9M8F9M7YYDB9K2R/assets/ade447f1-2b2e-4304-96a5-ad49452e889e.png" },
+  { id: "p15", title: "DR AGMANS Boswellia Serrata Joint Support", desc: "Boswellic acid 65% extract for cartilage preservation, arthritis pain & stiffness relief.", price: 849, orig: 1400, brand: "Dragmans", cat: "vitamins", badge: "Dragmans Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HQB09X8Y00Y7N1A844B2ZZ78%2Fassets%2F1709718913457-BOSWELLIA%20SERRATTA%20copy.jpg" },
+  { id: "p16", title: "DR AGMANS EPA-DHA Triple Strength Fish Oil", desc: "1000mg Omega-3 (540mg EPA / 360mg DHA) for cardiac protection & brain health.", price: 899, orig: 1600, brand: "Dragmans", cat: "vitamins", badge: "Dragmans Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HQB09X8Y00Y7N1A844B2ZZ78%2Fassets%2F1709726462347-EPA%20DHA%20copy.jpg" },
+  { id: "p17", title: "DR AGMANS Multi-Strain Digestive Enzymes", desc: "Protease, Amylase, Lipase & Lactase complex for heavy meal absorption & bloating relief.", price: 649, orig: 1150, brand: "Dragmans", cat: "gut", badge: "Dragmans Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HQB09X8Y00Y7N1A844B2ZZ78%2Fassets%2F1709726935234-DIGESTIVE%20ENZYMES%20copy.jpg" },
+  { id: "p18", title: "DR AGMANS Magnesium L-Threonate Brain Focus", desc: "Crosses blood-brain barrier for cognitive memory, synaptic density & neuro-protection.", price: 1099, orig: 1850, brand: "Dragmans", cat: "sleep", badge: "Dragmans Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HQB09X8Y00Y7N1A844B2ZZ78%2Fassets%2F1709790464185-MAGNESIUM%20L%20THREONATE%20copy.jpg" },
+  { id: "p19", title: "DR AGMANS Rhodiola Rosea Stamina Extract", desc: "3% Rosavins adaptogen for physical endurance, anti-fatigue & mental alertness.", price: 799, orig: 1350, brand: "Dragmans", cat: "vitality", badge: "Dragmans Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HQB09X8Y00Y7N1A844B2ZZ78%2Fassets%2F1709289914639-RHODIOLA%20copy.jpg" },
+  { id: "p20", title: "DR AGMANS Creatine Monohydrate Pure Powder", desc: "100% pure pharmaceutical-grade creatine for muscle strength growth & ATP synthesis.", price: 899, orig: 1500, brand: "Dragmans", cat: "vitality", badge: "Dragmans Official", img: "https://cdn.zyrosite.com/cdn-ecommerce/store_01HQB09X8Y00Y7N1A844B2ZZ78%2Fassets%2F1709801566000-CREATINE%20POWDER%20copy.jpg" }
 ];
 
 function renderProducts() {
@@ -419,11 +419,14 @@ function renderProducts() {
   if (!container) return;
 
   container.innerHTML = HEALTH_MEDICINES_CATALOG.map(p => `
-    <div class="card-item">
-      <span class="card-badge ${p.brand === 'Dragmans' ? 'badge-test' : 'badge-prod'}">${p.badge}</span>
+    <div class="card-item" style="display: flex; flex-direction: column;">
+      <div style="width: 100%; height: 140px; background: #F8FAFC; border-radius: 12px; padding: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; border: 1px solid #F1F5F9; position: relative;">
+        <span class="card-badge ${p.brand === 'Dragmans' ? 'badge-test' : 'badge-prod'}" style="position: absolute; top: 6px; left: 6px; z-index: 2;">${p.badge}</span>
+        <img src="${p.img}" alt="${p.title}" style="max-height: 124px; max-width: 100%; object-fit: contain; border-radius: 6px;" loading="lazy">
+      </div>
       <div class="card-title">${p.title}</div>
       <div class="card-desc">${p.desc}</div>
-      <div class="card-meta">
+      <div class="card-meta" style="margin-top: auto;">
         <div><span class="price-text">₹${p.price}</span><span class="price-orig">₹${p.orig}</span></div>
         <button class="btn btn-sm btn-accent" onclick="addToCart('${p.title}', ${p.price})">+ Add to Cart</button>
       </div>
@@ -798,11 +801,14 @@ function renderNutritionSupplements(catFilter = 'all') {
     : HEALTH_MEDICINES_CATALOG.filter(p => p.cat === catFilter);
 
   container.innerHTML = filtered.map(p => `
-    <div class="card-item">
-      <span class="card-badge ${p.brand === 'Dragmans' ? 'badge-test' : 'badge-prod'}">${p.badge}</span>
+    <div class="card-item" style="display: flex; flex-direction: column;">
+      <div style="width: 100%; height: 140px; background: #F8FAFC; border-radius: 12px; padding: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; border: 1px solid #F1F5F9; position: relative;">
+        <span class="card-badge ${p.brand === 'Dragmans' ? 'badge-test' : 'badge-prod'}" style="position: absolute; top: 6px; left: 6px; z-index: 2;">${p.badge}</span>
+        <img src="${p.img}" alt="${p.title}" style="max-height: 124px; max-width: 100%; object-fit: contain; border-radius: 6px;" loading="lazy">
+      </div>
       <div class="card-title">${p.title}</div>
       <div class="card-desc">${p.desc}</div>
-      <div class="card-meta">
+      <div class="card-meta" style="margin-top: auto;">
         <div><span class="price-text">₹${p.price}</span><span class="price-orig">₹${p.orig}</span></div>
         <button class="btn btn-sm btn-accent" onclick="addToCart('${p.title}', ${p.price})">+ Add to Cart</button>
       </div>
