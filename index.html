@@ -418,13 +418,33 @@
           </div>
         </div>
 
+        <!-- DIAGNOSTIC & MEDICAL TERMS INTELLIGENCE EXPLORER MODULE -->
         <div class="section-header mt-4">
-          <h3>Age-Wise Preventive Disease & Diagnostics Guide</h3>
-          <span class="section-tag">Ayurvedic & Modern Matrix</span>
+          <h3>Diagnostic & Health Terms Intelligence Explorer 🧬</h3>
+          <span class="section-tag">Ayurvedic & Clinical Diagnostics</span>
         </div>
 
         <div class="disease-explorer-card">
-          <p class="card-intro">Select an age group to inspect prevailing conditions, symptoms, basic diagnostics, and advanced diagnostics:</p>
+          <div class="disease-search-bar-wrapper" style="margin-bottom: 12px;">
+            <input type="text" id="diseaseSearchInput" class="form-input" placeholder="🔍 Search by health issue, symptom (e.g. fever, joint pain, thyroid), or medical term..." oninput="filterDiseaseExplorer()">
+          </div>
+
+          <div class="filter-pills" id="diseaseAgeFilterPills" style="margin-bottom: 14px;">
+            <button class="pill active" onclick="setDiseaseAgeFilter('all', this)">All Ages</button>
+            <button class="pill" onclick="setDiseaseAgeFilter('infancy', this)">Infancy (0-1y)</button>
+            <button class="pill" onclick="setDiseaseAgeFilter('toddlers', this)">Toddlers (1-5y)</button>
+            <button class="pill" onclick="setDiseaseAgeFilter('children', this)">Children (5-10y)</button>
+            <button class="pill" onclick="setDiseaseAgeFilter('adolescents', this)">Adolescents (10-20y)</button>
+            <button class="pill" onclick="setDiseaseAgeFilter('young_adults', this)">Young Adults (20-30y)</button>
+            <button class="pill" onclick="setDiseaseAgeFilter('established_adults', this)">Adults (30-40y)</button>
+            <button class="pill" onclick="setDiseaseAgeFilter('middle_age', this)">Middle Age (40-50y)</button>
+            <button class="pill" onclick="setDiseaseAgeFilter('seniors', this)">Seniors (50-60+y)</button>
+          </div>
+
+          <div class="disease-results-summary" id="diseaseResultsSummary" style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 12px; font-weight: 600;">
+            Showing diagnostic profiles across all age brackets:
+          </div>
+
           <div class="disease-grid" id="ageDiseaseGrid"></div>
         </div>
 
