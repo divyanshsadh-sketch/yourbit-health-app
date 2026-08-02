@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500&f[]=cabinet-grotesk@800,700,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5555">
+  <link rel="stylesheet" href="style.css?v=7000">
 </head>
 <body class="light-theme">
   
@@ -128,11 +128,7 @@
         
         <!-- INTERACTIVE YOURBIT CIRCULAR ORBIT LOGO WHEEL -->
         <div class="yourbit-orbit-wheel-wrapper">
-          <div class="orbit-wheel-header">
-            <h2 class="caring-title">Your <span class="caring-acronym-badge">C • A • R • I • N • G</span> Orbit</h2>
-            <span class="caring-subtitle">Tap any node on the orbit logo</span>
-          </div>
-
+          
           <div class="yourbit-orbit-stage">
             <!-- SVG Gradient Arc Ring & Center Person Figure -->
             <svg class="orbit-ring-svg" viewBox="0 0 320 320">
@@ -147,58 +143,63 @@
                 </linearGradient>
               </defs>
               
-              <!-- Outer Connecting Orbit Ring Arc -->
-              <circle cx="160" cy="160" r="105" fill="none" stroke="url(#orbitArcGradient)" stroke-width="4" stroke-dasharray="10 4" opacity="0.85" />
-              <circle cx="160" cy="160" r="105" fill="none" stroke="#E2E8F0" stroke-width="2" opacity="0.3" />
+              <!-- Outer Connecting Orbit Ring Arc (Thick solid ring matching logo) -->
+              <circle cx="160" cy="160" r="110" fill="none" stroke="url(#orbitArcGradient)" stroke-width="8" opacity="0.9" />
 
-              <!-- Central Person Figure (Matches YOURBIT Logo) -->
-              <g transform="translate(136, 126) scale(1.1)">
-                <!-- Person Head -->
-                <circle cx="22" cy="12" r="7.5" fill="#0F172A" />
-                <!-- Person Arms & Torso -->
-                <path d="M 4 20 C 14 18, 18 28, 22 44 C 26 28, 30 18, 40 20 C 33 26, 27 35, 25 54 L 19 54 C 17 35, 11 26, 4 20 Z" fill="#0F172A" />
+              <!-- Central Person Figure (Exact Match to YOURBIT Logo) -->
+              <g transform="translate(132, 122) scale(1.15)">
+                <!-- Person Head Circle -->
+                <circle cx="24" cy="14" r="9" fill="#0F2942" />
+                <!-- Person Arms & Torso Y-Shape -->
+                <path d="M 3 24 C 15 22, 20 32, 24 50 C 28 32, 33 22, 45 24 C 37 30, 30 40, 28 62 L 20 62 C 18 40, 11 30, 3 24 Z" fill="#0F2942" />
               </g>
             </svg>
 
             <!-- 6 Interactive Circular Letter Nodes Positioned Along the Logo Orbit Ring -->
             
-            <!-- Node 1 (Top): C - Care (Amber Yellow) -->
+            <!-- Node 1 (Top): C ARE (Amber Yellow) -->
             <div class="orbit-wheel-node pos-c" onclick="switchTab('view-care')">
               <div class="node-bubble bubble-c">C</div>
-              <span class="node-word-label word-c">Care</span>
+              <span class="node-word-text text-c">ARE</span>
             </div>
 
-            <!-- Node 2 (Top Right): A - Activity (Orange) -->
+            <!-- Node 2 (Top Right): A CTIVITY (Orange) -->
             <div class="orbit-wheel-node pos-a" onclick="switchTab('view-activity')">
               <div class="node-bubble bubble-a">A</div>
-              <span class="node-word-label word-a">Activity</span>
+              <span class="node-word-text text-a">CTIVITY</span>
             </div>
 
-            <!-- Node 3 (Bottom Right): R - Report (Coral Red) -->
+            <!-- Node 3 (Bottom Right): R EPORT (Coral Red) -->
             <div class="orbit-wheel-node pos-r" onclick="switchTab('view-report')">
               <div class="node-bubble bubble-r">R</div>
-              <span class="node-word-label word-r">Report</span>
+              <span class="node-word-text text-r">EPORT</span>
             </div>
 
-            <!-- Node 4 (Bottom): I - Inspire (Royal Blue) -->
+            <!-- Node 4 (Bottom): I NSPIRE (Royal Blue) -->
             <div class="orbit-wheel-node pos-i" onclick="switchTab('view-inspire')">
               <div class="node-bubble bubble-i">I</div>
-              <span class="node-word-label word-i">Inspire</span>
+              <span class="node-word-text text-i">NSPIRE</span>
             </div>
 
-            <!-- Node 5 (Bottom Left): N - Nutrition (Teal Cyan) -->
+            <!-- Node 5 (Bottom Left): N UTRITION (Teal Cyan) -->
             <div class="orbit-wheel-node pos-n" onclick="switchTab('view-nutrition')">
               <div class="node-bubble bubble-n">N</div>
-              <span class="node-word-label word-n">Nutrition</span>
+              <span class="node-word-text text-n">UTRITION</span>
             </div>
 
-            <!-- Node 6 (Top Left): G - Growth (Lime Green) -->
+            <!-- Node 6 (Top Left): G ROWTH (Lime Green) -->
             <div class="orbit-wheel-node pos-g" onclick="switchTab('view-growth')">
               <div class="node-bubble bubble-g">G</div>
-              <span class="node-word-label word-g">Growth</span>
+              <span class="node-word-text text-g">ROWTH</span>
             </div>
 
           </div>
+
+          <!-- Bottom Tagline -->
+          <div class="orbit-bottom-tagline">
+            <span>THE HEALTH REVOLUTION</span>
+          </div>
+
         </div>
 
         <!-- CIRCULAR HEALTH SCORE METER SECTION -->
@@ -794,6 +795,6 @@
 
   </div>
 
-  <script src="app.js?v=5555"></script>
+  <script src="app.js?v=7000"></script>
 </body>
 </html>
