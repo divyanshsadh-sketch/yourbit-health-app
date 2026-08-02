@@ -575,11 +575,11 @@ function renderAgeDiseaseGrid() {
 
   if (summary) {
     if (state.diseaseSearchQuery) {
-      summary.textContent = `Found ${profiles.length} diagnostic profile(s) matching "${state.diseaseSearchQuery}":`;
+      summary.textContent = `Found ${profiles.length} diagnostic profile(s) matching "${state.diseaseSearchQuery}"`;
     } else if (state.diseaseAgeFilter !== 'all') {
-      summary.textContent = `Showing ${profiles.length} diagnostic profile(s) for ${DISEASES_BY_AGE[state.diseaseAgeFilter].name}:`;
+      summary.textContent = `Showing ${profiles.length} diagnostic profile(s) for ${DISEASES_BY_AGE[state.diseaseAgeFilter].name}`;
     } else {
-      summary.textContent = `Showing all ${profiles.length} diagnostic profiles across 8 age brackets:`;
+      summary.textContent = `Showing all ${profiles.length} diagnostic profiles across 8 age brackets`;
     }
   }
 
