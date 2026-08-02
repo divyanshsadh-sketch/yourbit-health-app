@@ -1,4 +1,4 @@
-const CACHE_NAME = 'yourbit-health-v2';
+const CACHE_NAME = 'yourbit-health-v4';
 const ASSETS = [
   './',
   './index.html',
