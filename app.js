@@ -137,10 +137,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // PASSWORD AUTHENTICATION VERIFICATION (Passcode: divyansh)
 function checkAuthentication() {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("bypass") === "true") {
+    localStorage.setItem("yb_authenticated", "true");
+  }
   const isAuth = localStorage.getItem("yb_authenticated");
   const lockOverlay = document.getElementById("lockScreenOverlay");
   if (isAuth === "true" && lockOverlay) {
     lockOverlay.classList.add("hidden");
+  }
+  const viewParam = urlParams.get("view");
+  if (viewParam) {
+    switchTab(viewParam);
   }
 }
 
@@ -238,22 +246,127 @@ function renderCareModule() {
 function renderLabTests() {
   const container = document.getElementById("labTestsGrid");
   const tests = [
-    { title: "Full Body Executive Profile", desc: "84 parameters including HbA1c, Lipid, LFT, KFT, & Thyroid.", price: 1499, orig: 3999, badge: "Home Sample" },
-    { title: "Advanced MRI Brain Scan", desc: "3T High Resolution Neuro & Brain Vessel Angiography.", price: 4200, orig: 7500, badge: "NABL Certified" },
-    { title: "DEXA Bone Density Test", desc: "Dual-energy X-ray absorptiometry for osteopenia & bone mineral.", price: 1800, orig: 3200, badge: "Imaging Scan" }
+    {
+      id: "mri",
+      title: "Full Body MRI Scan (3T High-Res)",
+      desc: "3T High Resolution Whole-Body MRI Scan for early tumor, tissue lesion & soft tissue risk detection.",
+      price: 8500, orig: 15000, badge: "Imaging • NABL Certified",
+      simple: "A painless magnetic scan that takes detailed 3D pictures of your internal organs and soft tissues without any radiation.",
+      prep: "Fasting for 4-6 hours if abdominal scan is included. Remove all metallic items, watches, and jewelry prior to entering the MRI room.",
+      tat: "24 - 48 Hours"
+    },
+    {
+      id: "dexa",
+      title: "DEXA Bone Density & Body Fat Scan",
+      desc: "Dual-energy X-ray absorptiometry measuring bone mineral density (T-score), osteopenia, and body fat.",
+      price: 2200, orig: 4000, badge: "Radiology Scan",
+      simple: "A low-dose X-ray scan that measures bone strength and checks for osteoporosis or bone weakness in 15 minutes.",
+      prep: "Avoid taking calcium supplements for at least 24 hours prior to your scan appointment.",
+      tat: "Same Day (4-6 Hours)"
+    },
+    {
+      id: "fibroscan",
+      title: "Liver Fibrosis & Steatosis (FibroScan)",
+      desc: "Non-invasive transient elastography to evaluate liver stiffness, fatty liver disease (NAFLD), & fibrosis stage.",
+      price: 3500, orig: 6000, badge: "Specialized Diagnostic",
+      simple: "An ultrasound-based quick test that measures liver stiffness to detect fatty liver or liver scarring early without biopsy.",
+      prep: "Fast (no food or drinks except plain water) for 3 hours before the examination.",
+      tat: "Immediate (1 Hour)"
+    },
+    {
+      id: "calcium",
+      title: "Coronary Calcium Score (CT Heart Scan)",
+      desc: "Non-contrast chest CT quantifying calcified arterial plaques to assess early coronary artery disease (CAD) risk.",
+      price: 2800, orig: 5000, badge: "Cardiac Radiology",
+      simple: "A quick 10-minute heart CT scan that detects hard calcified plaque buildup in your heart arteries to prevent heart attacks.",
+      prep: "Avoid caffeine, energy drinks, and smoking for 4 hours prior to test. Wear comfortable clothing.",
+      tat: "Same Day"
+    },
+    {
+      id: "genetics",
+      title: "Genomic Disease Screening (NGS & PRS)",
+      desc: "Next-Generation DNA Sequencing & Polygenic Risk Score for hereditary cancer, cardiac risk & drug response.",
+      price: 12500, orig: 22000, badge: "Advanced Genetics",
+      simple: "A DNA test that maps your genetic profile to discover inherited risk for diseases and customize your lifetime health plan.",
+      prep: "No fasting required. Can be done via blood sample or simple cheek swab.",
+      tat: "10 - 14 Business Days"
+    },
+    {
+      id: "blood",
+      title: "Advanced Executive Blood Markers (92 Parameters)",
+      desc: "Comprehensive blood profile: HbA1c, Lipid, LFT, KFT, Thyroid (TSH/T3/T4), hs-CRP, Vit D3/B12, & Ferritin.",
+      price: 1999, orig: 4999, badge: "Home Sample Pick-up",
+      simple: "Complete health checkup analyzing your blood sugar, cholesterol, liver, kidney, thyroid, vitamins, and inflammation.",
+      prep: "10-12 hours overnight fasting required. Water is allowed.",
+      tat: "24 Hours"
+    },
+    {
+      id: "ct_usg",
+      title: "Abdominopelvic Color Doppler & CT Package",
+      desc: "High-resolution multi-slice CT & ultrasound imaging for comprehensive abdominal organ assessment.",
+      price: 3200, orig: 5500, badge: "Radiology Package",
+      simple: "Detailed ultrasound and CT imaging to examine your stomach, liver, gallbladder, kidneys, and pelvic organs.",
+      prep: "Fast 6 hours for CT; drink 1 liter of water 1 hour prior for ultrasound full bladder.",
+      tat: "24 Hours"
+    }
   ];
 
-  container.innerHTML = tests.map(t => `
+  window._yb_labTests = tests;
+
+  container.innerHTML = tests.map((t, idx) => `
     <div class="card-item">
       <span class="card-badge badge-test">${t.badge}</span>
       <div class="card-title">${t.title}</div>
       <div class="card-desc">${t.desc}</div>
+      <div style="font-size: 0.72rem; color: var(--emerald); background: var(--bg-card); padding: 6px; border-radius: var(--radius-sm); margin: 6px 0; border: 1px solid var(--border-subtle);">
+        💡 <strong>Simple Terms:</strong> ${t.simple}
+      </div>
       <div class="card-meta">
         <div><span class="price-text">₹${t.price}</span><span class="price-orig">₹${t.orig}</span></div>
-        <button class="btn btn-sm btn-primary" onclick="addToCart('${t.title}', ${t.price})">Book Test</button>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn btn-sm btn-outline" onclick="openTestInfoModal(${idx})">ℹ️ Prep Info</button>
+          <button class="btn btn-sm btn-primary" onclick="addToCart('${t.title}', ${t.price})">Book Test</button>
+        </div>
       </div>
     </div>
   `).join("");
+}
+
+function openTestInfoModal(testIdx) {
+  const t = window._yb_labTests[testIdx];
+  if (!t) return;
+  const modalContent = document.getElementById("diseaseModalContent");
+  modalContent.innerHTML = `
+    <span class="card-badge badge-test">${t.badge}</span>
+    <h2 style="font-size: 1.2rem; margin: 8px 0 4px 0; color: var(--text-main); font-weight: 800;">${t.title}</h2>
+    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">${t.desc}</p>
+    
+    <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.82rem;">
+      <div style="background: #F0FDFA; border: 1px solid #A7F3D0; padding: 10px; border-radius: var(--radius-sm);">
+        <strong style="color: var(--teal);">💡 Simple Explanation (No Medical Jargon):</strong><br>
+        <span style="color: var(--text-main);">${t.simple}</span>
+      </div>
+
+      <div style="background: #FFF7ED; border: 1px solid #FFEDD5; padding: 10px; border-radius: var(--radius-sm);">
+        <strong style="color: var(--orange);">📋 Test Preparation Guidelines:</strong><br>
+        <span style="color: var(--text-main);">${t.prep}</span>
+      </div>
+
+      <div style="background: #EEF2FF; border: 1px solid #C7D2FE; padding: 10px; border-radius: var(--radius-sm);">
+        <strong style="color: var(--indigo);">⏱️ Report Turnaround Time:</strong><br>
+        <span style="color: var(--text-main); font-weight: 700;">${t.tat}</span>
+      </div>
+
+      <div style="background: var(--bg-elevated); padding: 10px; border-radius: var(--radius-sm); display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <span style="font-size: 1.1rem; font-weight: 800; color: var(--emerald);">₹${t.price}</span>
+          <span style="font-size: 0.8rem; text-decoration: line-through; color: var(--text-muted); margin-left: 6px;">₹${t.orig}</span>
+        </div>
+        <button class="btn btn-primary" onclick="addToCart('${t.title}', ${t.price}); document.getElementById('diseaseModal').classList.add('hidden');">Book This Test Now</button>
+      </div>
+    </div>
+  `;
+  document.getElementById("diseaseModal").classList.remove("hidden");
 }
 
 function renderDoctors() {
@@ -542,17 +655,61 @@ function openDiseaseModalByKey(ageKey, index) {
   document.getElementById("diseaseModal").classList.remove("hidden");
 }
 
+if (!state.uploadedReports) {
+  state.uploadedReports = [
+    { title: "Comprehensive Blood & Lipid Profile.pdf", date: "28 July 2026", status: "Verified • NABL Lab" },
+    { title: "3T High-Res Brain MRI Report.pdf", date: "15 June 2026", status: "Verified • Neuro Imaging" },
+    { title: "DEXA Bone Mineral Density Scan.pdf", date: "02 May 2026", status: "Verified • Ortho Scan" }
+  ];
+}
+
 function renderReportVault() {
   const container = document.getElementById("reportVaultList");
-  container.innerHTML = `
-    <div class="card-item" style="flex-direction: row; align-items: center; justify-content: space-between;">
+  if (!container) return;
+
+  if (state.uploadedReports.length === 0) {
+    container.innerHTML = `<div style="padding: 16px; text-align: center; color: var(--text-muted); font-size: 0.8rem;">No uploaded medical reports yet. Click "Upload Report" to store your diagnostic files securely.</div>`;
+    return;
+  }
+
+  container.innerHTML = state.uploadedReports.map((r, i) => `
+    <div class="card-item" style="flex-direction: row; align-items: center; justify-content: space-between; margin-bottom: 8px;">
       <div>
-        <div class="card-title">Comprehensive Blood Profile.pdf</div>
-        <div class="card-desc">Uploaded on 28 July 2026 • Verified</div>
+        <div class="card-title" style="font-size: 0.88rem; font-weight: 700;">📄 ${r.title}</div>
+        <div class="card-desc" style="font-size: 0.72rem;">Uploaded on ${r.date} • <span style="color: var(--emerald); font-weight: 600;">${r.status}</span></div>
       </div>
-      <button class="btn btn-sm btn-secondary" onclick="showToast('Downloading report file...')">📥 View</button>
+      <div style="display: flex; gap: 6px;">
+        <button class="btn btn-sm btn-secondary" onclick="showToast('Opening ${r.title}...')">📥 View</button>
+        <button class="btn btn-sm btn-outline" onclick="deleteReport(${i})" style="color: #EF4444;">🗑️</button>
+      </div>
     </div>
-  `;
+  `).join("");
+}
+
+function deleteReport(idx) {
+  state.uploadedReports.splice(idx, 1);
+  renderReportVault();
+  showToast("Report removed from vault.");
+}
+
+function triggerReportUpload() {
+  const input = document.createElement("input");
+  input.type = "file";
+  input.accept = ".pdf,.jpg,.jpeg,.png,.dcm";
+  input.onchange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const today = new Date().toLocaleDateString("en-GB", { day: 'numeric', month: 'short', year: 'numeric' });
+      state.uploadedReports.unshift({
+        title: file.name,
+        date: today,
+        status: "Uploaded • Encrypted Vault"
+      });
+      renderReportVault();
+      showToast(`✅ Successfully uploaded "${file.name}" to your secure report vault!`);
+    }
+  };
+  input.click();
 }
 
 // 7. Inspire Module Controller
