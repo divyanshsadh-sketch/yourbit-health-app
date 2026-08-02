@@ -390,17 +390,37 @@ function renderDoctors() {
   `).join("");
 }
 
+// 20 Authentic Health & Medicine Supplements from Dragmans (dragmans.com) & Cosynee Life (mycosynee.com)
+const HEALTH_MEDICINES_CATALOG = [
+  { id: "p1", title: "DR AGMANS Ashwagandha Organic KSM-66", desc: "Reduces cortisol stress, balances Vata dosha, and enhances deep REM sleep & stamina.", price: 699, orig: 1200, brand: "Dragmans", cat: "sleep", badge: "Dragmans Official" },
+  { id: "p2", title: "CosyneeLife Magnesium Glycinate 550mg", desc: "High-absorption chelated magnesium for nerve relaxation, muscle recovery & deep sleep.", price: 799, orig: 1350, brand: "Cosynee Life", cat: "sleep", badge: "Cosynee Official" },
+  { id: "p3", title: "DR AGMANS Shilajit Resin & Capsules", desc: "80+ trace minerals & Fulvic acid for physical stamina, energy boost & vitality.", price: 999, orig: 1800, brand: "Dragmans", cat: "vitality", badge: "Dragmans Official" },
+  { id: "p4", title: "CosyneeLife Shilajit + Ashwagandha Complex", desc: "Synergistic adaptogenic formulation for cellular rejuvenation, muscle growth & endurance.", price: 1299, orig: 2100, brand: "Cosynee Life", cat: "vitality", badge: "Cosynee Official" },
+  { id: "p5", title: "DR AGMANS Berberine Extract 500mg", desc: "AMPK enzyme activator for healthy blood sugar metabolism, HbA1c control & lipid balance.", price: 899, orig: 1500, brand: "Dragmans", cat: "vitality", badge: "Dragmans Official" },
+  { id: "p6", title: "CosyneeLife Neem + Piperine Skin & Detox Boost", desc: "Azadirachta Indica leaf extract with bio-enhancing Piperine for clear skin & blood purification.", price: 649, orig: 1100, brand: "Cosynee Life", cat: "detox", badge: "Cosynee Official" },
+  { id: "p7", title: "DR AGMANS Curcumin Extract + BioPerine", desc: "95% Curcuminoids for joint pain relief, anti-inflammatory defense & tissue repair.", price: 749, orig: 1300, brand: "Dragmans", cat: "vitamins", badge: "Dragmans Official" },
+  { id: "p8", title: "CosyneeLife Aloe Gut Soothe+", desc: "Pure Aloe Vera whole leaf & fresh gel extract for gut lining repair, GERD & acidity relief.", price: 599, orig: 999, brand: "Cosynee Life", cat: "gut", badge: "Cosynee Official" },
+  { id: "p9", title: "DR AGMANS Chlorophyll Liquid Detox Drops", desc: "Internal body deodorant & alkalizing drops for liver detoxification & cellular oxygenation.", price: 599, orig: 950, brand: "Dragmans", cat: "detox", badge: "Dragmans Official" },
+  { id: "p10", title: "CosyneeLife Triphala Detox+ Capsules", desc: "Amalaki, Haritaki & Bibhitaki digestive cleanser for gentle bowel regularity & gut flora.", price: 499, orig: 850, brand: "Cosynee Life", cat: "gut", badge: "Cosynee Official" },
+  { id: "p11", title: "DR AGMANS Vitamin D3 + K2 (MK-7) Drops", desc: "High-bioavailability drops for bone calcium absorption, cardiovascular health & immunity.", price: 549, orig: 999, brand: "Dragmans", cat: "vitamins", badge: "Dragmans Official" },
+  { id: "p12", title: "CosyneeLife Melatonin, Magnesium & Zinc", desc: "Triple-action non-habit-forming sleep matrix for circadian rhythm regulation & rest.", price: 699, orig: 1200, brand: "Cosynee Life", cat: "sleep", badge: "Cosynee Official" },
+  { id: "p13", title: "DR AGMANS Colostrum Immune Powder", desc: "Pure bovine colostrum rich in IgG antibodies for leaky gut repair & immune defense.", price: 1199, orig: 1999, brand: "Dragmans", cat: "gut", badge: "Dragmans Official" },
+  { id: "p14", title: "CosyneeLife Holy Basil (Tulsi) Extract", desc: "Eugenol & Rosmarinic acid adaptogen for lung health, respiratory protection & immunity.", price: 449, orig: 799, brand: "Cosynee Life", cat: "vitamins", badge: "Cosynee Official" },
+  { id: "p15", title: "DR AGMANS Boswellia Serrata Joint Support", desc: "Boswellic acid 65% extract for cartilage preservation, arthritis pain & stiffness relief.", price: 849, orig: 1400, brand: "Dragmans", cat: "vitamins", badge: "Dragmans Official" },
+  { id: "p16", title: "DR AGMANS EPA-DHA Triple Strength Fish Oil", desc: "1000mg Omega-3 (540mg EPA / 360mg DHA) for cardiac protection & brain health.", price: 899, orig: 1600, brand: "Dragmans", cat: "vitamins", badge: "Dragmans Official" },
+  { id: "p17", title: "DR AGMANS Multi-Strain Digestive Enzymes", desc: "Protease, Amylase, Lipase & Lactase complex for heavy meal absorption & bloating relief.", price: 649, orig: 1150, brand: "Dragmans", cat: "gut", badge: "Dragmans Official" },
+  { id: "p18", title: "DR AGMANS Magnesium L-Threonate Brain Focus", desc: "Crosses blood-brain barrier for cognitive memory, synaptic density & neuro-protection.", price: 1099, orig: 1850, brand: "Dragmans", cat: "sleep", badge: "Dragmans Official" },
+  { id: "p19", title: "DR AGMANS Rhodiola Rosea Stamina Extract", desc: "3% Rosavins adaptogen for physical endurance, anti-fatigue & mental alertness.", price: 799, orig: 1350, brand: "Dragmans", cat: "vitality", badge: "Dragmans Official" },
+  { id: "p20", title: "DR AGMANS Creatine Monohydrate Pure Powder", desc: "100% pure pharmaceutical-grade creatine for muscle strength growth & ATP synthesis.", price: 899, orig: 1500, brand: "Dragmans", cat: "vitality", badge: "Dragmans Official" }
+];
+
 function renderProducts() {
   const container = document.getElementById("productsGrid");
-  const prods = [
-    { cat: "dryfruits", title: "Raw Organic Mamra Almonds (500g)", desc: "Unroasted, rich in Vitamin E, Magnesium & Omega-3.", price: 899, orig: 1200 },
-    { cat: "kits", title: "Ayurvedic Diabetes Management Kit", desc: "Vijaysar, Gudmar, Jamun seed powder & HbA1c test log.", price: 1299, orig: 1999 },
-    { cat: "herbs", title: "Pure Ashwagandha Ksheerabala Drops", desc: "Stress relief, Vata stabilization, and sleep enhancement.", price: 449, orig: 699 }
-  ];
+  if (!container) return;
 
-  container.innerHTML = prods.map(p => `
-    <div class="card-item" data-prod-cat="${p.cat}">
-      <span class="card-badge badge-prod">Health Product</span>
+  container.innerHTML = HEALTH_MEDICINES_CATALOG.map(p => `
+    <div class="card-item">
+      <span class="card-badge ${p.brand === 'Dragmans' ? 'badge-test' : 'badge-prod'}">${p.badge}</span>
       <div class="card-title">${p.title}</div>
       <div class="card-desc">${p.desc}</div>
       <div class="card-meta">
@@ -758,6 +778,36 @@ function renderNutritionModule() {
     updateHealthMeterUI();
     showToast("Added +1 Water Glass! 🥛");
   };
+
+  renderNutritionSupplements('all');
+}
+
+function filterNutritionSupplements(cat, btn) {
+  const pills = document.querySelectorAll("#nutritionFilterPills .pill");
+  pills.forEach(p => p.classList.remove("active"));
+  if (btn) btn.classList.add("active");
+  renderNutritionSupplements(cat);
+}
+
+function renderNutritionSupplements(catFilter = 'all') {
+  const container = document.getElementById("nutritionSupplementsGrid");
+  if (!container) return;
+
+  const filtered = catFilter === 'all' 
+    ? HEALTH_MEDICINES_CATALOG 
+    : HEALTH_MEDICINES_CATALOG.filter(p => p.cat === catFilter);
+
+  container.innerHTML = filtered.map(p => `
+    <div class="card-item">
+      <span class="card-badge ${p.brand === 'Dragmans' ? 'badge-test' : 'badge-prod'}">${p.badge}</span>
+      <div class="card-title">${p.title}</div>
+      <div class="card-desc">${p.desc}</div>
+      <div class="card-meta">
+        <div><span class="price-text">₹${p.price}</span><span class="price-orig">₹${p.orig}</span></div>
+        <button class="btn btn-sm btn-accent" onclick="addToCart('${p.title}', ${p.price})">+ Add to Cart</button>
+      </div>
+    </div>
+  `).join("");
 }
 
 // 9. Growth Module Controller
@@ -777,6 +827,8 @@ function renderGrowthModule() {
     </div>
   `).join("");
 
+  renderGrowthSupplements();
+
   const badgesGrid = document.getElementById("badgesGrid");
   const badges = [
     { icon: "🔥", name: "7-Day Streak", desc: "Logged health 7 days in a row" },
@@ -790,6 +842,26 @@ function renderGrowthModule() {
       <div class="badge-icon">${b.icon}</div>
       <div class="badge-name">${b.name}</div>
       <div class="badge-desc">${b.desc}</div>
+    </div>
+  `).join("");
+}
+
+function renderGrowthSupplements() {
+  const container = document.getElementById("growthSupplementsGrid");
+  if (!container) return;
+
+  // Show top longevity, muscle growth & vitality medicines
+  const growthProds = HEALTH_MEDICINES_CATALOG.filter(p => ['vitality', 'vitamins', 'gut'].includes(p.cat)).slice(0, 10);
+
+  container.innerHTML = growthProds.map(p => `
+    <div class="card-item">
+      <span class="card-badge ${p.brand === 'Dragmans' ? 'badge-test' : 'badge-prod'}">${p.badge}</span>
+      <div class="card-title">${p.title}</div>
+      <div class="card-desc">${p.desc}</div>
+      <div class="card-meta">
+        <div><span class="price-text">₹${p.price}</span><span class="price-orig">₹${p.orig}</span></div>
+        <button class="btn btn-sm btn-primary" onclick="addToCart('${p.title}', ${p.price})">+ Add to Cart</button>
+      </div>
     </div>
   `).join("");
 }
