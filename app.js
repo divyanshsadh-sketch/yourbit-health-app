@@ -1018,3 +1018,183 @@ function showToast(msg) {
     }, 2800);
   }
 }
+
+// 14. 6-Member Family Health Passports & Interactive Carousel Engine
+let familyProfiles = [null, null, null, null, null, null];
+let activeFamilyIdx = 0;
+
+function switchFamilyMember(idx) {
+  activeFamilyIdx = idx;
+  
+  // Highlight active slide in carousel
+  for (let i = 0; i < 6; i++) {
+    const slide = document.getElementById(`famSlide${i}`);
+    if (slide) {
+      if (i === idx) slide.classList.add("active");
+      else slide.classList.remove("active");
+    }
+  }
+
+  const currentProfile = familyProfiles[idx];
+  const form = document.getElementById("healthPassportForm");
+  const summaryCard = document.getElementById("passportSummaryCard");
+
+  if (currentProfile && currentProfile.name) {
+    // Fill form and render summary
+    fillPassportFormFields(currentProfile);
+    calcPassportBmi();
+    renderHealthPassportSummary(currentProfile);
+  } else {
+    // Empty form for new entry
+    clearPassportFormFields();
+    if (summaryCard) summaryCard.classList.add("hidden");
+    if (form) form.classList.remove("hidden");
+  }
+}
+
+function fillPassportFormFields(p) {
+  if (document.getElementById("passportName")) document.getElementById("passportName").value = p.name || "";
+  if (document.getElementById("passportAge")) document.getElementById("passportAge").value = p.age || "";
+  if (document.getElementById("passportGender")) document.getElementById("passportGender").value = p.gender || "Male";
+  if (document.getElementById("passportHeight")) document.getElementById("passportHeight").value = p.height || "";
+  if (document.getElementById("passportWeight")) document.getElementById("passportWeight").value = p.weight || "";
+  if (document.getElementById("passportBloodGroup")) document.getElementById("passportBloodGroup").value = p.blood || "O+";
+  if (document.getElementById("passportBp")) document.getElementById("passportBp").value = p.bp || "";
+  if (document.getElementById("passportSugar")) document.getElementById("passportSugar").value = p.sugar || "";
+  if (document.getElementById("passportGoal")) document.getElementById("passportGoal").value = p.goal || "General Fitness";
+  if (document.getElementById("passportConditions")) document.getElementById("passportConditions").value = p.conditions || "";
+}
+
+function clearPassportFormFields() {
+  if (document.getElementById("passportName")) document.getElementById("passportName").value = "";
+  if (document.getElementById("passportAge")) document.getElementById("passportAge").value = "";
+  if (document.getElementById("passportGender")) document.getElementById("passportGender").value = "Male";
+  if (document.getElementById("passportHeight")) document.getElementById("passportHeight").value = "";
+  if (document.getElementById("passportWeight")) document.getElementById("passportWeight").value = "";
+  if (document.getElementById("passportBloodGroup")) document.getElementById("passportBloodGroup").value = "O+";
+  if (document.getElementById("passportBp")) document.getElementById("passportBp").value = "";
+  if (document.getElementById("passportSugar")) document.getElementById("passportSugar").value = "";
+  if (document.getElementById("passportGoal")) document.getElementById("passportGoal").value = "General Fitness";
+  if (document.getElementById("passportConditions")) document.getElementById("passportConditions").value = "";
+  calcPassportBmi();
+}
+
+function calcPassportBmi() {
+  const heightCm = parseFloat(document.getElementById("passportHeight")?.value);
+  const weightKg = parseFloat(document.getElementById("passportWeight")?.value);
+  const valEl = document.getElementById("passportBmiVal");
+  const statusEl = document.getElementById("passportBmiStatus");
+
+  if (heightCm > 0 && weightKg > 0) {
+    const heightM = heightCm / 100;
+    const bmi = (weightKg / (heightM * heightM)).toFixed(1);
+    valEl.textContent = bmi;
+
+    if (bmi < 18.5) {
+      statusEl.textContent = "Underweight";
+      statusEl.style.color = "#EAB308";
+    } else if (bmi <= 24.9) {
+      statusEl.textContent = "Optimal Healthy Weight";
+      statusEl.style.color = "#10B981";
+    } else if (bmi <= 29.9) {
+      statusEl.textContent = "Overweight";
+      statusEl.style.color = "#F97316";
+    } else {
+      statusEl.textContent = "High Risk / Obese";
+      statusEl.style.color = "#E11D48";
+    }
+  } else {
+    valEl.textContent = "--";
+    statusEl.textContent = "Enter height & weight";
+    statusEl.style.color = "var(--text-muted)";
+  }
+}
+
+function saveHealthPassport() {
+  const profile = {
+    name: document.getElementById("passportName")?.value || `Member ${activeFamilyIdx + 1}`,
+    age: document.getElementById("passportAge")?.value || "--",
+    gender: document.getElementById("passportGender")?.value || "Male",
+    height: document.getElementById("passportHeight")?.value || "",
+    weight: document.getElementById("passportWeight")?.value || "",
+    bmi: document.getElementById("passportBmiVal")?.textContent || "--",
+    blood: document.getElementById("passportBloodGroup")?.value || "O+",
+    bp: document.getElementById("passportBp")?.value || "120/80",
+    sugar: document.getElementById("passportSugar")?.value || "95",
+    goal: document.getElementById("passportGoal")?.value || "General Fitness",
+    conditions: document.getElementById("passportConditions")?.value || "None"
+  };
+
+  familyProfiles[activeFamilyIdx] = profile;
+  localStorage.setItem("yb_family_profiles", JSON.stringify(familyProfiles));
+  
+  updateFamilyCarouselCardsUI();
+  renderHealthPassportSummary(profile);
+  showToast(`📑 Saved Health Passport for ${profile.name}!`);
+}
+
+function updateFamilyCarouselCardsUI() {
+  for (let i = 0; i < 6; i++) {
+    const p = familyProfiles[i];
+    const nameEl = document.getElementById(`famName${i}`);
+    const statusEl = document.getElementById(`famStatus${i}`);
+    
+    if (p && p.name) {
+      if (nameEl) nameEl.textContent = p.name;
+      if (statusEl) {
+        statusEl.textContent = `✅ Saved (${p.age}y, ${p.blood})`;
+        statusEl.style.color = "#10B981";
+      }
+    } else {
+      if (statusEl) {
+        statusEl.textContent = "➕ Tap to enter details";
+        statusEl.style.color = "var(--primary-accent)";
+      }
+    }
+  }
+}
+
+function renderHealthPassportSummary(profile) {
+  const form = document.getElementById("healthPassportForm");
+  const summaryCard = document.getElementById("passportSummaryCard");
+  if (!summaryCard) return;
+
+  document.getElementById("sumName").textContent = profile.name;
+  document.getElementById("sumAgeSex").textContent = `${profile.age} yrs, ${profile.gender}`;
+  document.getElementById("sumBmi").textContent = profile.bmi;
+  document.getElementById("sumBlood").textContent = profile.blood;
+  document.getElementById("sumBp").textContent = profile.bp;
+  document.getElementById("sumSugar").textContent = profile.sugar ? `${profile.sugar} mg/dL` : "--";
+  document.getElementById("sumGoal").textContent = profile.goal;
+
+  if (form) form.classList.add("hidden");
+  summaryCard.classList.remove("hidden");
+}
+
+function editHealthPassport() {
+  const form = document.getElementById("healthPassportForm");
+  const summaryCard = document.getElementById("passportSummaryCard");
+  if (form && summaryCard) {
+    summaryCard.classList.add("hidden");
+    form.classList.remove("hidden");
+  }
+}
+
+function loadSavedFamilyProfiles() {
+  const raw = localStorage.getItem("yb_family_profiles");
+  if (raw) {
+    try {
+      familyProfiles = JSON.parse(raw);
+      if (!Array.isArray(familyProfiles)) familyProfiles = [null, null, null, null, null, null];
+    } catch (e) {
+      familyProfiles = [null, null, null, null, null, null];
+    }
+  }
+  updateFamilyCarouselCardsUI();
+  switchFamilyMember(0);
+}
+
+// Call on startup
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(loadSavedFamilyProfiles, 200);
+});
