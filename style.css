@@ -355,43 +355,52 @@ p, .card-desc, input, textarea, .score-status, .hero-text p, .caring-subtitle, .
 .bubble-n { background: linear-gradient(135deg, #0D9488, #0F766E); box-shadow: 0 6px 16px rgba(13, 148, 136, 0.4); }
 .bubble-g { background: linear-gradient(135deg, #10B981, #059669); box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4); }
 
-.node-word-label {
-  font-size: 0.72rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin-top: 3px;
+.node-word-text {
+  font-size: 0.95rem;
+  font-weight: 900;
+  font-family: var(--font-heading);
   letter-spacing: 0.5px;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 1px 6px;
-  border-radius: var(--radius-full);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  text-transform: uppercase;
+  color: #0F172A;
 }
 
-.word-c { color: #D97706; }
-.word-a { color: #EA580C; }
-.word-r { color: #BE123C; }
-.word-i { color: #1D4ED8; }
-.word-n { color: #0F766E; }
-.word-g { color: #059669; }
-
 /* Precise 6-Node Circular Positions on 320x320 Ring */
-.pos-c { top: 10px; left: 160px; transform: translateX(-50%); }
-.pos-c:hover, .pos-c:active { transform: translateX(-50%) scale(1.15); }
 
-.pos-a { top: 78px; left: 242px; transform: translate(-50%, -50%); }
-.pos-a:hover, .pos-a:active { transform: translate(-50%, -50%) scale(1.15); }
+/* Node 1 (Top): C ARE */
+.pos-c { top: 12px; left: 140px; flex-direction: row; gap: 6px; align-items: center; }
+.pos-c:hover, .pos-c:active { transform: scale(1.12); }
 
-.pos-r { top: 216px; left: 242px; transform: translate(-50%, -50%); }
-.pos-r:hover, .pos-r:active { transform: translate(-50%, -50%) scale(1.15); }
+/* Node 2 (Top Right): A CTIVITY */
+.pos-a { top: 76px; left: 242px; transform: translate(-50%, -50%); flex-direction: column; gap: 2px; align-items: center; }
+.pos-a:hover, .pos-a:active { transform: translate(-50%, -50%) scale(1.12); }
 
-.pos-i { bottom: 6px; left: 160px; transform: translateX(-50%); }
-.pos-i:hover, .pos-i:active { transform: translateX(-50%) scale(1.15); }
+/* Node 3 (Bottom Right): R EPORT */
+.pos-r { top: 220px; left: 242px; transform: translate(-50%, -50%); flex-direction: column; gap: 2px; align-items: center; }
+.pos-r:hover, .pos-r:active { transform: translate(-50%, -50%) scale(1.12); }
 
-.pos-n { top: 216px; left: 78px; transform: translate(-50%, -50%); }
-.pos-n:hover, .pos-n:active { transform: translate(-50%, -50%) scale(1.15); }
+/* Node 4 (Bottom): I NSPIRE */
+.pos-i { bottom: 12px; left: 130px; flex-direction: row; gap: 6px; align-items: center; }
+.pos-i:hover, .pos-i:active { transform: scale(1.12); }
 
-.pos-g { top: 78px; left: 78px; transform: translate(-50%, -50%); }
-.pos-g:hover, .pos-g:active { transform: translate(-50%, -50%) scale(1.15); }
+/* Node 5 (Bottom Left): N UTRITION */
+.pos-n { top: 220px; left: 62px; transform: translate(-50%, -50%); flex-direction: row; gap: 6px; align-items: center; }
+.pos-n:hover, .pos-n:active { transform: translate(-50%, -50%) scale(1.12); }
+
+/* Node 6 (Top Left): G ROWTH */
+.pos-g { top: 76px; left: 62px; transform: translate(-50%, -50%); flex-direction: row; gap: 6px; align-items: center; }
+.pos-g:hover, .pos-g:active { transform: translate(-50%, -50%) scale(1.12); }
+
+/* Bottom Tagline */
+.orbit-bottom-tagline {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-weight: 900;
+  font-family: var(--font-heading);
+  color: #0F2942;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
 
 /* 2. Circular Health Score Ring Section */
 .hero-score-ring-container {
