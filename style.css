@@ -262,14 +262,14 @@ p, .card-desc, input, textarea, .score-status, .hero-text p, .caring-subtitle, .
    ========================================================= */
 
 /* =========================================================
-   INTERACTIVE YOURBIT CIRCULAR ORBIT LOGO WHEEL (GRAPHIC MATCH)
+   INTERACTIVE YOURBIT CIRCULAR ORBIT LOGO WHEEL (SVG MASTER MATCH)
    ========================================================= */
 
 .yourbit-orbit-wheel-wrapper {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 36px;
-  padding: 16px 10px;
+  padding: 12px 6px;
   margin: 10px auto 24px auto;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
   display: flex;
@@ -282,99 +282,58 @@ p, .card-desc, input, textarea, .score-status, .hero-text p, .caring-subtitle, .
   overflow: hidden;
 }
 
-.yourbit-orbit-stage {
-  position: relative;
-  width: 340px;
-  height: 340px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.yourbit-orbit-svg-container {
+  width: 100%;
+  max-width: 440px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width: 360px) {
-  .yourbit-orbit-stage {
-    transform: scale(0.88);
-    margin: -20px auto;
-  }
+.orbit-master-svg {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  overflow: visible;
 }
 
-.orbit-ring-svg {
-  width: 340px;
-  height: 340px;
-  position: absolute;
-  top: 0;
-  left: 0;
+.svg-orbit-interactive-node {
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.svg-orbit-interactive-node:hover,
+.svg-orbit-interactive-node:active {
+  filter: drop-shadow(0 6px 14px rgba(15, 23, 42, 0.25));
+}
+
+.svg-node-circle {
+  transition: r 0.2s ease, stroke-width 0.2s ease;
+}
+
+.svg-orbit-interactive-node:hover .svg-node-circle,
+.svg-orbit-interactive-node:active .svg-node-circle {
+  r: 24.5px;
+  stroke-width: 3.5px;
+}
+
+.svg-node-letter {
+  font-size: 21px;
+  font-weight: 900;
+  fill: #FFFFFF;
+  font-family: var(--font-heading);
   pointer-events: none;
 }
 
-.orbit-wheel-node {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  z-index: 10;
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.orbit-wheel-node:hover, .orbit-wheel-node:active {
-  transform: scale(1.1);
-  z-index: 25;
-}
-
-.node-bubble {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.35rem;
+.svg-node-label {
+  font-size: 15.5px;
   font-weight: 900;
-  color: white;
-  font-family: var(--font-heading);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border: 2px solid white;
-  flex-shrink: 0;
-}
-
-/* Exact Palette Matching the Graphic Diagram */
-.bubble-c { background: linear-gradient(135deg, #F59E0B, #D97706); box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35); }
-.bubble-a { background: linear-gradient(135deg, #F97316, #EA580C); box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35); }
-.bubble-r { background: linear-gradient(135deg, #E11D48, #BE123C); box-shadow: 0 4px 14px rgba(225, 29, 72, 0.35); }
-.bubble-i { background: linear-gradient(135deg, #2563EB, #1D4ED8); box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35); }
-.bubble-n { background: linear-gradient(135deg, #0D9488, #0F766E); box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35); }
-.bubble-g { background: linear-gradient(135deg, #10B981, #059669); box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35); }
-
-.orbit-label-title {
-  font-size: 1rem;
-  font-weight: 900;
-  color: #0F2942;
+  fill: #0F2942;
   font-family: var(--font-heading);
   letter-spacing: 0.5px;
-  text-transform: uppercase;
-  white-space: nowrap;
+  pointer-events: none;
 }
-
-/* Precise Node & Label Positioning (Center = 170px, R = 105px) */
-
-/* Node C (CARE): Top (12 o'clock) */
-.node-pos-c { top: 68px; left: 170px; transform: translate(-50%, -50%); flex-direction: column; gap: 4px; }
-
-/* Node A (ACTIVITY): Top-Right (~2 o'clock) */
-.node-pos-a { top: 118px; left: 260px; transform: translate(-50%, -50%); flex-direction: column; gap: 3px; }
-
-/* Node R (REPORTS): Bottom-Right (~4 o'clock) */
-.node-pos-r { top: 222px; left: 260px; transform: translate(-50%, -50%); flex-direction: column; gap: 3px; }
-
-/* Node I (INSPIRE): Bottom (6 o'clock) */
-.node-pos-i { top: 272px; left: 170px; transform: translate(-50%, -50%); flex-direction: column; gap: 4px; }
-
-/* Node N (NUTRITION): Bottom-Left (~8 o'clock) */
-.node-pos-n { top: 222px; left: 78px; transform: translate(-50%, -50%); flex-direction: row; gap: 6px; }
-
-/* Node G (GROWTH): Top-Left (~10 o'clock) */
-.node-pos-g { top: 118px; left: 78px; transform: translate(-50%, -50%); flex-direction: row; gap: 6px; }
 
 /* 2. Circular Health Score Ring Section */
 .hero-score-ring-container {
