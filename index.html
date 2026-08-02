@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500&f[]=cabinet-grotesk@800,700,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=7000">
+  <link rel="stylesheet" href="style.css?v=8888">
 </head>
 <body class="light-theme">
   
@@ -126,12 +126,12 @@
       <!-- HERO LANDING PAGE (#view-hero) -->
       <section id="view-hero" class="module-view active">
         
-        <!-- INTERACTIVE YOURBIT CIRCULAR ORBIT LOGO WHEEL -->
+        <!-- INTERACTIVE YOURBIT CIRCULAR ORBIT LOGO WHEEL (EXACT GRAPHIC MATCH) -->
         <div class="yourbit-orbit-wheel-wrapper">
           
           <div class="yourbit-orbit-stage">
-            <!-- SVG Gradient Arc Ring & Center Person Figure -->
-            <svg class="orbit-ring-svg" viewBox="0 0 320 320">
+            <!-- SVG Multi-Color Smooth Orbit Arc Ring & Center Person Figure -->
+            <svg class="orbit-ring-svg" viewBox="0 0 340 340">
               <defs>
                 <linearGradient id="orbitArcGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stop-color="#F59E0B" />
@@ -143,61 +143,54 @@
                 </linearGradient>
               </defs>
               
-              <!-- Outer Connecting Orbit Ring Arc (Thick solid ring matching logo) -->
-              <circle cx="160" cy="160" r="110" fill="none" stroke="url(#orbitArcGradient)" stroke-width="8" opacity="0.9" />
+              <!-- Outer Connecting Smooth Orbit Arc Ring -->
+              <circle cx="170" cy="170" r="105" fill="none" stroke="url(#orbitArcGradient)" stroke-width="6" opacity="0.95" />
 
-              <!-- Central Person Figure (Exact Match to YOURBIT Logo) -->
-              <g transform="translate(132, 122) scale(1.15)">
-                <!-- Person Head Circle -->
-                <circle cx="24" cy="14" r="9" fill="#0F2942" />
-                <!-- Person Arms & Torso Y-Shape -->
-                <path d="M 3 24 C 15 22, 20 32, 24 50 C 28 32, 33 22, 45 24 C 37 30, 30 40, 28 62 L 20 62 C 18 40, 11 30, 3 24 Z" fill="#0F2942" />
+              <!-- Central Person Figure (Matches YOURBIT Logo) -->
+              <g transform="translate(144, 130) scale(1.18)">
+                <circle cx="22" cy="12" r="7.5" fill="#0F2942" />
+                <path d="M 3 20 C 13 18, 17 28, 22 42 C 27 28, 31 18, 41 20 C 34 26, 28 34, 26 52 L 18 52 C 16 34, 10 26, 3 20 Z" fill="#0F2942" />
               </g>
             </svg>
 
-            <!-- 6 Interactive Circular Letter Nodes Positioned Along the Logo Orbit Ring -->
-            
-            <!-- Node 1 (Top): C ARE (Amber Yellow) -->
-            <div class="orbit-wheel-node pos-c" onclick="switchTab('view-care')">
+            <!-- 6 Interactive Letter Nodes + Outside Labels -->
+
+            <!-- Node C: CARE (Top) -->
+            <div class="orbit-wheel-node node-pos-c" onclick="switchTab('view-care')">
+              <span class="orbit-label-title label-c">CARE</span>
               <div class="node-bubble bubble-c">C</div>
-              <span class="node-word-text text-c">ARE</span>
             </div>
 
-            <!-- Node 2 (Top Right): A CTIVITY (Orange) -->
-            <div class="orbit-wheel-node pos-a" onclick="switchTab('view-activity')">
+            <!-- Node A: ACTIVITY (Top Right) -->
+            <div class="orbit-wheel-node node-pos-a" onclick="switchTab('view-activity')">
+              <span class="orbit-label-title label-a">ACTIVITY</span>
               <div class="node-bubble bubble-a">A</div>
-              <span class="node-word-text text-a">CTIVITY</span>
             </div>
 
-            <!-- Node 3 (Bottom Right): R EPORT (Coral Red) -->
-            <div class="orbit-wheel-node pos-r" onclick="switchTab('view-report')">
+            <!-- Node R: REPORTS (Bottom Right) -->
+            <div class="orbit-wheel-node node-pos-r" onclick="switchTab('view-report')">
               <div class="node-bubble bubble-r">R</div>
-              <span class="node-word-text text-r">EPORT</span>
+              <span class="orbit-label-title label-r">REPORTS</span>
             </div>
 
-            <!-- Node 4 (Bottom): I NSPIRE (Royal Blue) -->
-            <div class="orbit-wheel-node pos-i" onclick="switchTab('view-inspire')">
+            <!-- Node I: INSPIRE (Bottom) -->
+            <div class="orbit-wheel-node node-pos-i" onclick="switchTab('view-inspire')">
               <div class="node-bubble bubble-i">I</div>
-              <span class="node-word-text text-i">NSPIRE</span>
+              <span class="orbit-label-title label-i">INSPIRE</span>
             </div>
 
-            <!-- Node 5 (Bottom Left): N UTRITION (Teal Cyan) -->
-            <div class="orbit-wheel-node pos-n" onclick="switchTab('view-nutrition')">
+            <!-- Node N: NUTRITION (Bottom Left) -->
+            <div class="orbit-wheel-node node-pos-n" onclick="switchTab('view-nutrition')">
+              <span class="orbit-label-title label-n">NUTRITION</span>
               <div class="node-bubble bubble-n">N</div>
-              <span class="node-word-text text-n">UTRITION</span>
             </div>
 
-            <!-- Node 6 (Top Left): G ROWTH (Lime Green) -->
-            <div class="orbit-wheel-node pos-g" onclick="switchTab('view-growth')">
+            <!-- Node G: GROWTH (Top Left) -->
+            <div class="orbit-wheel-node node-pos-g" onclick="switchTab('view-growth')">
+              <span class="orbit-label-title label-g">GROWTH</span>
               <div class="node-bubble bubble-g">G</div>
-              <span class="node-word-text text-g">ROWTH</span>
             </div>
 
-          </div>
-
-          <!-- Bottom Tagline -->
-          <div class="orbit-bottom-tagline">
-            <span>THE HEALTH REVOLUTION</span>
           </div>
 
         </div>
@@ -795,6 +788,6 @@
 
   </div>
 
-  <script src="app.js?v=7000"></script>
+  <script src="app.js?v=8888"></script>
 </body>
 </html>
