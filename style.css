@@ -262,45 +262,30 @@ p, .card-desc, input, textarea, .score-status, .hero-text p, .caring-subtitle, .
    ========================================================= */
 
 /* =========================================================
-   INTERACTIVE YOURBIT CIRCULAR ORBIT LOGO WHEEL STYLES
+   INTERACTIVE YOURBIT CIRCULAR ORBIT LOGO WHEEL (GRAPHIC MATCH)
    ========================================================= */
 
 .yourbit-orbit-wheel-wrapper {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 50%;
-  padding: 16px;
+  border-radius: 36px;
+  padding: 16px 10px;
   margin: 10px auto 24px auto;
-  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 345px;
-  height: 345px;
+  width: 100%;
   box-sizing: border-box;
   position: relative;
-}
-
-@media (max-width: 380px) {
-  .yourbit-orbit-wheel-wrapper {
-    width: 310px;
-    height: 310px;
-    padding: 8px;
-  }
-}
-
-.orbit-wheel-header {
-  text-align: center;
-  margin-bottom: 4px;
-  width: 100%;
-  z-index: 15;
+  overflow: hidden;
 }
 
 .yourbit-orbit-stage {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 340px;
+  height: 340px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -309,14 +294,14 @@ p, .card-desc, input, textarea, .score-status, .hero-text p, .caring-subtitle, .
 
 @media (max-width: 360px) {
   .yourbit-orbit-stage {
-    transform: scale(0.9);
-    margin: -16px auto;
+    transform: scale(0.88);
+    margin: -20px auto;
   }
 }
 
 .orbit-ring-svg {
-  width: 320px;
-  height: 320px;
+  width: 340px;
+  height: 340px;
   position: absolute;
   top: 0;
   left: 0;
@@ -326,16 +311,20 @@ p, .card-desc, input, textarea, .score-status, .hero-text p, .caring-subtitle, .
 .orbit-wheel-node {
   position: absolute;
   display: flex;
-  flex-direction: column;
   align-items: center;
   cursor: pointer;
   z-index: 10;
-  transition: transform 0.25s ease, filter 0.25s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.orbit-wheel-node:hover, .orbit-wheel-node:active {
+  transform: scale(1.1);
+  z-index: 25;
 }
 
 .node-bubble {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -344,63 +333,48 @@ p, .card-desc, input, textarea, .score-status, .hero-text p, .caring-subtitle, .
   font-weight: 900;
   color: white;
   font-family: var(--font-heading);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border: 2px solid white;
+  flex-shrink: 0;
 }
 
-.bubble-c { background: linear-gradient(135deg, #F59E0B, #D97706); box-shadow: 0 6px 16px rgba(245, 158, 11, 0.4); }
-.bubble-a { background: linear-gradient(135deg, #F97316, #EA580C); box-shadow: 0 6px 16px rgba(249, 115, 22, 0.4); }
-.bubble-r { background: linear-gradient(135deg, #E11D48, #BE123C); box-shadow: 0 6px 16px rgba(225, 29, 72, 0.4); }
-.bubble-i { background: linear-gradient(135deg, #2563EB, #1D4ED8); box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4); }
-.bubble-n { background: linear-gradient(135deg, #0D9488, #0F766E); box-shadow: 0 6px 16px rgba(13, 148, 136, 0.4); }
-.bubble-g { background: linear-gradient(135deg, #10B981, #059669); box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4); }
+/* Exact Palette Matching the Graphic Diagram */
+.bubble-c { background: linear-gradient(135deg, #F59E0B, #D97706); box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35); }
+.bubble-a { background: linear-gradient(135deg, #F97316, #EA580C); box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35); }
+.bubble-r { background: linear-gradient(135deg, #E11D48, #BE123C); box-shadow: 0 4px 14px rgba(225, 29, 72, 0.35); }
+.bubble-i { background: linear-gradient(135deg, #2563EB, #1D4ED8); box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35); }
+.bubble-n { background: linear-gradient(135deg, #0D9488, #0F766E); box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35); }
+.bubble-g { background: linear-gradient(135deg, #10B981, #059669); box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35); }
 
-.node-word-text {
-  font-size: 0.95rem;
+.orbit-label-title {
+  font-size: 1rem;
   font-weight: 900;
+  color: #0F2942;
   font-family: var(--font-heading);
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: #0F172A;
+  white-space: nowrap;
 }
 
-/* Precise 6-Node Circular Positions on 320x320 Ring */
+/* Precise Node & Label Positioning (Center = 170px, R = 105px) */
 
-/* Node 1 (Top): C ARE */
-.pos-c { top: 12px; left: 140px; flex-direction: row; gap: 6px; align-items: center; }
-.pos-c:hover, .pos-c:active { transform: scale(1.12); }
+/* Node C (CARE): Top (12 o'clock) */
+.node-pos-c { top: 68px; left: 170px; transform: translate(-50%, -50%); flex-direction: column; gap: 4px; }
 
-/* Node 2 (Top Right): A CTIVITY */
-.pos-a { top: 76px; left: 242px; transform: translate(-50%, -50%); flex-direction: column; gap: 2px; align-items: center; }
-.pos-a:hover, .pos-a:active { transform: translate(-50%, -50%) scale(1.12); }
+/* Node A (ACTIVITY): Top-Right (~2 o'clock) */
+.node-pos-a { top: 118px; left: 260px; transform: translate(-50%, -50%); flex-direction: column; gap: 3px; }
 
-/* Node 3 (Bottom Right): R EPORT */
-.pos-r { top: 220px; left: 242px; transform: translate(-50%, -50%); flex-direction: column; gap: 2px; align-items: center; }
-.pos-r:hover, .pos-r:active { transform: translate(-50%, -50%) scale(1.12); }
+/* Node R (REPORTS): Bottom-Right (~4 o'clock) */
+.node-pos-r { top: 222px; left: 260px; transform: translate(-50%, -50%); flex-direction: column; gap: 3px; }
 
-/* Node 4 (Bottom): I NSPIRE */
-.pos-i { bottom: 12px; left: 130px; flex-direction: row; gap: 6px; align-items: center; }
-.pos-i:hover, .pos-i:active { transform: scale(1.12); }
+/* Node I (INSPIRE): Bottom (6 o'clock) */
+.node-pos-i { top: 272px; left: 170px; transform: translate(-50%, -50%); flex-direction: column; gap: 4px; }
 
-/* Node 5 (Bottom Left): N UTRITION */
-.pos-n { top: 220px; left: 62px; transform: translate(-50%, -50%); flex-direction: row; gap: 6px; align-items: center; }
-.pos-n:hover, .pos-n:active { transform: translate(-50%, -50%) scale(1.12); }
+/* Node N (NUTRITION): Bottom-Left (~8 o'clock) */
+.node-pos-n { top: 222px; left: 78px; transform: translate(-50%, -50%); flex-direction: row; gap: 6px; }
 
-/* Node 6 (Top Left): G ROWTH */
-.pos-g { top: 76px; left: 62px; transform: translate(-50%, -50%); flex-direction: row; gap: 6px; align-items: center; }
-.pos-g:hover, .pos-g:active { transform: translate(-50%, -50%) scale(1.12); }
-
-/* Bottom Tagline */
-.orbit-bottom-tagline {
-  margin-top: 10px;
-  font-size: 0.95rem;
-  font-weight: 900;
-  font-family: var(--font-heading);
-  color: #0F2942;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-align: center;
-}
+/* Node G (GROWTH): Top-Left (~10 o'clock) */
+.node-pos-g { top: 118px; left: 78px; transform: translate(-50%, -50%); flex-direction: row; gap: 6px; }
 
 /* 2. Circular Health Score Ring Section */
 .hero-score-ring-container {
