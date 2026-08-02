@@ -31,10 +31,14 @@
   --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
   --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08);
   --shadow-lg: 0 10px 30px rgba(15, 23, 42, 0.12);
-  --font-family: 'Plus Jakarta Sans', 'Outfit', system-ui, sans-serif;
+  
+  /* 3-Font Creative Engine */
+  --font-heading: 'Brandon Grotesque', 'Hanken Grotesk', system-ui, sans-serif;
+  --font-ui: 'Satoshi', system-ui, sans-serif;
+  --font-body: 'Ubuntu', system-ui, sans-serif;
 }
 
-/* Global Reset for 100% Mobile Viewport Fitting */
+/* Global Typography & Reset */
 html, body {
   width: 100%;
   max-width: 100%;
@@ -42,12 +46,35 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   background-color: #E2E8F0;
   color: var(--text-main);
   line-height: 1.5;
   min-height: 100vh;
   -webkit-tap-highlight-color: transparent;
+}
+
+/* 1. Brandon Grotesque Engine - Bold Headings & Brand Elements */
+h1, h2, h3, h4, h5, h6, 
+.brand-text, .section-header h3, .module-hero h2, 
+.logo-title, .modal-title, .health-score-card h3 {
+  font-family: var(--font-heading) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em;
+}
+
+/* 2. Satoshi Engine - Ultra-sleek UI Controls, Buttons, Badges & Titles */
+.btn, .pill, .card-badge, .price-text, .nav-label, 
+.card-title, .node-label, .habit-item label, .section-tag, 
+.stat-value, .water-count, .search-pill-btn, .quick-pill,
+.habit-checkbox, label, select, .score-number {
+  font-family: var(--font-ui) !important;
+  font-weight: 700;
+}
+
+/* 3. Ubuntu Engine - Legible Body Text & Descriptions */
+p, .card-desc, input, textarea, .score-status, .hero-text p, .caring-subtitle {
+  font-family: var(--font-body) !important;
 }
 
 * {
