@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>YOURBIT - Align Your Habits. Own Your Orbit.</title>
+  <meta name="description" content="Align your habits. Own your orbit. Personalized medical care, activity, reports, inspire, nutrition, and growth.">
+  <meta name="theme-color" content="#F8FAFC">
+  <link rel="manifest" href="manifest.json">
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+  
+  <!-- LOCK SCREEN GATEWAY OVERLAY -->
+  <div id="lockScreenOverlay" class="lock-screen-overlay">
+    <div class="lock-card">
+      <div class="lock-header">
+        <img src="logo.png" alt="YOURBIT Logo" class="lock-logo-img">
+        <h2 class="lock-title">YOURBIT GATEWAY</h2>
+        <span class="lock-badge">ALIGN YOUR HABITS • OWN YOUR ORBIT</span>
+      </div>
+      <p class="lock-desc">Protected Healthcare & Wellness Ecosystem. Please enter your passcode to access your health orbit.</p>
+      
+      <form id="lockScreenForm" onsubmit="event.preventDefault(); verifyPassword();">
+        <div class="form-group">
+          <label for="appPasswordInput">Enter Access Password</label>
+          <input type="password" id="appPasswordInput" class="form-input lock-input" placeholder="••••••••" required autocomplete="current-password">
+        </div>
+        <div id="passwordError" class="lock-error-msg hidden">⚠️ Incorrect password. Access denied.</div>
+        <button type="submit" class="btn btn-primary btn-full lock-btn">Unlock Your Orbit 🔓</button>
+      </form>
+      <div class="lock-footer">
+        <span>🔒 256-Bit Encrypted Patient Data Protocol</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="app" class="app-container">
+    
+    <!-- Top Clinical App Header (YOURBIT Official Orbit Logo) -->
+    <header class="app-header">
+      <div class="header-top-row">
+        <div class="brand-logo" onclick="switchTab('view-hero')" title="YOURBIT - Align your habits. Own your orbit.">
+          <img src="logo.png" alt="YOURBIT Logo" class="brand-logo-img">
+          <div class="brand-logo-text-group">
+            <span class="logo-text">YOURBIT</span>
+            <span class="logo-tagline">ALIGN YOUR HABITS • OWN YOUR ORBIT</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="streak-badge" title="Daily Health Streak">
+            <span class="fire-icon">🔥</span>
+            <span id="streakCount">7</span><span class="unit">d</span>
+          </div>
+          <button class="cart-trigger" id="openCartBtn" title="Shopping Cart" aria-label="Open Shopping Cart">
+            <span>🛒</span>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+          <div class="user-avatar" title="Rahul Sharma (Age 26)">
+            <span>RS</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="header-bottom-row">
+        <div class="age-selector-wrapper">
+          <span class="age-label">👤 Profile Age:</span>
+          <select id="ageGroupSelect" class="age-select" aria-label="Select Target Age Group">
+            <option value="infancy">Infancy (0 - 1 Yr)</option>
+            <option value="toddlers">Toddlers (1 - 5 Yrs)</option>
+            <option value="children">Children (5 - 10 Yrs)</option>
+            <option value="adolescents">Adolescents (10 - 20 Yrs)</option>
+            <option value="young_adults" selected>Young Adults (20 - 30 Yrs)</option>
+            <option value="established_adults">Adults (30 - 40 Yrs)</option>
+            <option value="middle_age">Middle Age (40 - 50 Yrs)</option>
+            <option value="seniors">Seniors (50 - 60+ Yrs)</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <!-- Global Security & Compliance Bar -->
+    <div class="trust-banner">
+      <div class="trust-item">
+        <span class="trust-icon">🔒</span>
+        <span>HIPAA & ISO-27001 Encrypted Orbit</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">🔬</span>
+        <span>NABL Accredited Labs</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">👨‍⚕️</span>
+        <span>Verified Doctors</span>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- HERO LANDING PAGE (#view-hero) -->
+      <section id="view-hero" class="module-view active">
+        
+        <!-- Welcome Hero Banner -->
+        <div class="hero-welcome-card">
+          <div class="welcome-left">
+            <span class="welcome-greeting">Good Morning, Rahul 👋</span>
+            <h1 class="hero-heading">Align Your Habits. Own Your Orbit.</h1>
+            <p class="hero-subtext">Preventive healthcare, diagnostic tracking, customized workouts, and nutrition tailored to your personal health ecosystem.</p>
+          </div>
+          <div class="welcome-score-widget">
+            <span class="score-widget-title">Orbit Health Score</span>
+            <div class="score-ring">
+              <span class="score-val" id="heroScoreNum">84</span>
+              <span class="score-max">/100</span>
+            </div>
+            <span class="score-status-chip">Optimal Orbit</span>
+          </div>
+        </div>
+
+        <!-- CARING VERTICAL CAROUSEL SECTION -->
+        <div class="caring-section">
+          <div class="caring-header">
+            <div>
+              <h2 class="caring-title">Your Daily <span class="caring-acronym-badge">C • A • R • I • N • G</span> Journey</h2>
+              <p class="caring-subtitle">Click any letter node below to launch that module in your orbit:</p>
+            </div>
+          </div>
+
+          <!-- Vertical Carousel Container -->
+          <div class="caring-vertical-carousel">
+            
+            <!-- Letter C: CARE -->
+            <div class="caring-card card-c" onclick="switchTab('view-care')">
+              <div class="caring-letter-box">
+                <span class="letter">C</span>
+              </div>
+              <div class="caring-card-body">
+                <div class="caring-module-name">Care & Guidance 🩺</div>
+                <div class="caring-module-desc">Book certified lab tests (MRI, Dexa, Blood markers), consult verified doctors, & buy health kits.</div>
+                <div class="caring-features-chips">
+                  <span>🧪 Lab Tests</span>
+                  <span>👨‍⚕️ Doctor Consult</span>
+                  <span>📦 Health Kits</span>
+                </div>
+              </div>
+              <div class="caring-card-arrow">➔</div>
+            </div>
+
+            <!-- Letter A: ACTIVITY -->
+            <div class="caring-card card-a" onclick="switchTab('view-activity')">
+              <div class="caring-letter-box">
+                <span class="letter">A</span>
+              </div>
+              <div class="caring-card-body">
+                <div class="caring-module-name">Activity & Workouts 🏃</div>
+                <div class="caring-module-desc">Personalized exercise routines adapted to your age group, active workout timers, & step tracking.</div>
+                <div class="caring-features-chips">
+                  <span>👟 Steps</span>
+                  <span>🏋️ HIIT Workouts</span>
+                  <span>🧘 Yoga & Mobility</span>
+                </div>
+              </div>
+              <div class="caring-card-arrow">➔</div>
+            </div>
+
+            <!-- Letter R: REPORT -->
+            <div class="caring-card card-r" onclick="switchTab('view-report')">
+              <div class="caring-letter-box">
+                <span class="letter">R</span>
+              </div>
+              <div class="caring-card-body">
+                <div class="caring-module-name">Report & Diagnostics 📊</div>
+                <div class="caring-module-desc">Interactive vitals trend tracker (BPM, BP, Sugar, BMI) and age-wise preventive disease guide.</div>
+                <div class="caring-features-chips">
+                  <span>❤️ Vitals Charts</span>
+                  <span>📄 Report Vault</span>
+                  <span>🧬 Age Matrix</span>
+                </div>
+              </div>
+              <div class="caring-card-arrow">➔</div>
+            </div>
+
+            <!-- Letter I: INSPIRE -->
+            <div class="caring-card card-i" onclick="switchTab('view-inspire')">
+              <div class="caring-letter-box">
+                <span class="letter">I</span>
+              </div>
+              <div class="caring-card-body">
+                <div class="caring-module-name">Inspire & Community 💡</div>
+                <div class="caring-module-desc">Daily motivational quotes, real transformation case studies, & expert wellness articles.</div>
+                <div class="caring-features-chips">
+                  <span>💬 Daily Quote</span>
+                  <span>🌟 Success Stories</span>
+                  <span>📖 Expert Tips</span>
+                </div>
+              </div>
+              <div class="caring-card-arrow">➔</div>
+            </div>
+
+            <!-- Letter N: NUTRITION -->
+            <div class="caring-card card-n" onclick="switchTab('view-nutrition')">
+              <div class="caring-letter-box">
+                <span class="letter">N</span>
+              </div>
+              <div class="caring-card-body">
+                <div class="caring-module-name">Nutrition & Diet 🥗</div>
+                <div class="caring-module-desc">Calorie budget breakdown, protein/carbs/fat macro ratios, 1-tap water logger, & meal tracker.</div>
+                <div class="caring-features-chips">
+                  <span>🥗 Meal Logger</span>
+                  <span>💧 Water Tracker</span>
+                  <span>⚖️ Macro Ratios</span>
+                </div>
+              </div>
+              <div class="caring-card-arrow">➔</div>
+            </div>
+
+            <!-- Letter G: GROWTH -->
+            <div class="caring-card card-g" onclick="switchTab('view-growth')">
+              <div class="caring-letter-box">
+                <span class="letter">G</span>
+              </div>
+              <div class="caring-card-body">
+                <div class="caring-module-name">Growth & Habits 🌱</div>
+                <div class="caring-module-desc">Overall Health Score calculation, daily habit progress rings, and unlocked achievement badges.</div>
+                <div class="caring-features-chips">
+                  <span>🏆 Health Score</span>
+                  <span>✅ Habit Rings</span>
+                  <span>🎖️ Badges</span>
+                </div>
+              </div>
+              <div class="caring-card-arrow">➔</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- HERO BOTTOM HEALTH METER BAR -->
+        <div class="hero-healthmeter-container">
+          <div class="healthmeter-header">
+            <div class="meter-title">
+              <span class="pulsating-heart">❤️</span>
+              <span>Live Orbit Health Meter</span>
+            </div>
+            <span class="meter-updated">Last sync: Just now</span>
+          </div>
+
+          <div class="healthmeter-grid">
+            <div class="meter-pill">
+              <div class="meter-icon">👟</div>
+              <div class="meter-details">
+                <span class="meter-val" id="meterSteps">6,420</span>
+                <span class="meter-lbl">/ 10k Steps</span>
+              </div>
+            </div>
+
+            <div class="meter-pill">
+              <div class="meter-icon">❤️</div>
+              <div class="meter-details">
+                <span class="meter-val" id="meterBpm">72 bpm</span>
+                <span class="meter-lbl">Resting HR</span>
+              </div>
+            </div>
+
+            <div class="meter-pill">
+              <div class="meter-icon">🩺</div>
+              <div class="meter-details">
+                <span class="meter-val" id="meterBp">120/80</span>
+                <span class="meter-lbl">Blood Pressure</span>
+              </div>
+            </div>
+
+            <div class="meter-pill">
+              <div class="meter-icon">🩸</div>
+              <div class="meter-details">
+                <span class="meter-val" id="meterSpo2">98%</span>
+                <span class="meter-lbl">SpO2 Oxygen</span>
+              </div>
+            </div>
+
+            <div class="meter-pill">
+              <div class="meter-icon">💧</div>
+              <div class="meter-details">
+                <span class="meter-val" id="meterWater">6/8 Gl</span>
+                <span class="meter-lbl">Hydration</span>
+              </div>
+            </div>
+
+            <div class="meter-pill">
+              <div class="meter-icon">🔥</div>
+              <div class="meter-details">
+                <span class="meter-val" id="meterCals">420 kcal</span>
+                <span class="meter-lbl">Active Burn</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 1: CARE -->
+      <section id="view-care" class="module-view">
+        <div class="module-hero">
+          <div class="hero-text">
+            <h2>Care & Guidance 🩺</h2>
+            <p>Assess first. Guide next. Consult trusted doctors, book certified lab tests, and get targeted health kits.</p>
+          </div>
+          <button class="btn btn-primary" id="btnStartAssessment">📋 Take Free Health Assessment</button>
+        </div>
+
+        <div class="subtabs-bar">
+          <button class="subtab-btn active" data-care-tab="tests">🧪 Book Lab Tests</button>
+          <button class="subtab-btn" data-care-tab="consult">👨‍⚕️ Consult Doctors</button>
+          <button class="subtab-btn" data-care-tab="products">🛍️ Health Products & Kits</button>
+        </div>
+
+        <div id="care-section-tests" class="care-subcontent active">
+          <div class="section-header">
+            <h3>Core Diagnostic Tests & Scans</h3>
+            <span class="section-tag">Home Sample Collection</span>
+          </div>
+          <div class="grid-container" id="labTestsGrid"></div>
+        </div>
+
+        <div id="care-section-consult" class="care-subcontent">
+          <div class="section-header">
+            <h3>Verified Doctors & Dietitians</h3>
+            <span class="section-tag">Instant Video / Chat Consultation</span>
+          </div>
+          <div class="grid-container" id="doctorsGrid"></div>
+        </div>
+
+        <div id="care-section-products" class="care-subcontent">
+          <div class="section-header">
+            <h3>Targeted Health Products & Essentials</h3>
+            <span class="section-tag">Raw Dry Fruits, Seeds, Herbs & Kits</span>
+          </div>
+          <div class="filter-pills" id="productFilterPills">
+            <button class="pill active" data-prod-cat="all">All</button>
+            <button class="pill" data-prod-cat="kits">Disease Kits</button>
+            <button class="pill" data-prod-cat="dryfruits">Raw Dry Fruits & Seeds</button>
+            <button class="pill" data-prod-cat="herbs">Herbs & Syrups</button>
+          </div>
+          <div class="grid-container" id="productsGrid"></div>
+        </div>
+      </section>
+
+      <!-- MODULE 2: ACTIVITY -->
+      <section id="view-activity" class="module-view">
+        <div class="module-hero activity-hero">
+          <div class="hero-text">
+            <h2>Activity & Fitness 🏃</h2>
+            <p>Personalized daily workouts, step tracking, and age-adapted exercise routines.</p>
+          </div>
+          <button class="btn btn-accent" id="btnStartWorkoutTimer">⏱️ Start Active Workout</button>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-icon">👟</div>
+            <div class="metric-data">
+              <span class="metric-value" id="stepsValue">6,420</span>
+              <span class="metric-label">/ 10,000 Steps</span>
+            </div>
+            <div class="progress-bar-bg"><div class="progress-fill" style="width: 64%;"></div></div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon">🔥</div>
+            <div class="metric-data">
+              <span class="metric-value" id="caloriesValue">420</span>
+              <span class="metric-label">/ 600 Active kcal</span>
+            </div>
+            <div class="progress-bar-bg"><div class="progress-fill orange" style="width: 70%;"></div></div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon">⏱️</div>
+            <div class="metric-data">
+              <span class="metric-value" id="activeMinsValue">35</span>
+              <span class="metric-label">/ 45 Active Mins</span>
+            </div>
+            <div class="progress-bar-bg"><div class="progress-fill cyan" style="width: 78%;"></div></div>
+          </div>
+        </div>
+
+        <div class="section-header">
+          <h3>Recommended Workouts for Your Profile</h3>
+          <span class="section-tag" id="activityAgeTag">Age 20-30 Focus</span>
+        </div>
+        <div class="grid-container" id="workoutsGrid"></div>
+      </section>
+
+      <!-- MODULE 3: REPORT -->
+      <section id="view-report" class="module-view">
+        <div class="module-hero report-hero">
+          <div class="hero-text">
+            <h2>Health Reports & Vitals 📊</h2>
+            <p>Track vital signs, upload medical reports, and inspect age-wise diagnostic guidelines.</p>
+          </div>
+          <button class="btn btn-secondary" id="btnLogVitals">✏️ Log New Vitals</button>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Vitals Trend Tracker</h3>
+            <div class="chart-selector">
+              <button class="chart-tab active" data-chart-metric="hr">Heart Rate</button>
+              <button class="chart-tab" data-chart-metric="bp">Blood Pressure</button>
+              <button class="chart-tab" data-chart-metric="sugar">Blood Sugar</button>
+              <button class="chart-tab" data-chart-metric="bmi">BMI</button>
+            </div>
+          </div>
+          <div class="canvas-container">
+            <canvas id="vitalsChartCanvas" width="700" height="260"></canvas>
+          </div>
+        </div>
+
+        <div class="section-header mt-4">
+          <h3>Age-Wise Preventive Disease & Diagnostics Guide</h3>
+          <span class="section-tag">Ayurvedic & Modern Matrix</span>
+        </div>
+
+        <div class="disease-explorer-card">
+          <p class="card-intro">Select an age group to inspect prevailing conditions, symptoms, basic diagnostics, and advanced diagnostics:</p>
+          <div class="disease-grid" id="ageDiseaseGrid"></div>
+        </div>
+
+        <div class="section-header mt-4">
+          <h3>Uploaded Medical Reports & Scans</h3>
+          <button class="btn btn-sm btn-outline" id="btnUploadReport">📤 Upload Report</button>
+        </div>
+        <div class="report-vault-list" id="reportVaultList"></div>
+      </section>
+
+      <!-- MODULE 4: INSPIRE -->
+      <section id="view-inspire" class="module-view">
+        <div class="module-hero inspire-hero">
+          <div class="hero-text">
+            <h2>Inspire & Motivation 💡</h2>
+            <p>Daily wellness inspiration, real transformation stories, and expert health insights.</p>
+          </div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-icon">💬</div>
+          <div class="quote-body">
+            <p class="quote-text" id="dailyQuoteText">"Health is not merely the absence of disease, but a state of complete physical, mental, and social well-being."</p>
+            <span class="quote-author" id="dailyQuoteAuthor">— Ancient Ayurveda Wisdom</span>
+          </div>
+        </div>
+
+        <div class="section-header mt-4">
+          <h3>Community Transformations & Case Studies</h3>
+          <span class="section-tag">Verified Stories</span>
+        </div>
+        <div class="feed-container" id="inspireFeedGrid"></div>
+      </section>
+
+      <!-- MODULE 5: NUTRITION -->
+      <section id="view-nutrition" class="module-view">
+        <div class="module-hero nutrition-hero">
+          <div class="hero-text">
+            <h2>Nutrition & Diet 🥗</h2>
+            <p>Evidence-based meal tracking, macro ratios, water hydration, and customized diet plans.</p>
+          </div>
+          <button class="btn btn-primary" id="btnLogMeal">🥗 Log Meal</button>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card wide-card">
+            <div class="metric-header">
+              <span>Daily Calorie Budget</span>
+              <span class="metric-target">Goal: 2,100 kcal</span>
+            </div>
+            <div class="calorie-summary">
+              <div class="cal-item">
+                <span class="cal-val" id="calConsumed">1,450</span>
+                <span class="cal-lbl">Consumed</span>
+              </div>
+              <div class="cal-item divider">-</div>
+              <div class="cal-item">
+                <span class="cal-val" id="calBurned">420</span>
+                <span class="cal-lbl">Burned</span>
+              </div>
+              <div class="cal-item divider">=</div>
+              <div class="cal-item highlight">
+                <span class="cal-val" id="calRemaining">1,070</span>
+                <span class="cal-lbl">Remaining</span>
+              </div>
+            </div>
+            <div class="macro-split">
+              <div class="macro-bar-item">
+                <span class="macro-label">Protein (110g / 140g)</span>
+                <div class="progress-bar-bg"><div class="progress-fill indigo" style="width: 78%;"></div></div>
+              </div>
+              <div class="macro-bar-item">
+                <span class="macro-label">Carbs (160g / 220g)</span>
+                <div class="progress-bar-bg"><div class="progress-fill cyan" style="width: 72%;"></div></div>
+              </div>
+              <div class="macro-bar-item">
+                <span class="macro-label">Fats (42g / 65g)</span>
+                <div class="progress-bar-bg"><div class="progress-fill orange" style="width: 64%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="metric-card water-card">
+            <div class="metric-icon">💧</div>
+            <div class="water-info">
+              <h3>Water Hydration</h3>
+              <span class="water-count"><span id="waterGlassCount">6</span> / 8 Glasses</span>
+            </div>
+            <button class="btn btn-sm btn-water" id="btnAddWaterGlass">+1 Glass 🥛</button>
+          </div>
+        </div>
+
+        <div class="section-header mt-4">
+          <h3>Today's Meal Log</h3>
+        </div>
+        <div class="meal-log-list" id="loggedMealsList"></div>
+      </section>
+
+      <!-- MODULE 6: GROWTH -->
+      <section id="view-growth" class="module-view">
+        <div class="module-hero growth-hero">
+          <div class="hero-text">
+            <h2>Growth & Milestones 🌱</h2>
+            <p>Overall Health Score gauge, habit streaks, long-term trends, and achievement rewards.</p>
+          </div>
+        </div>
+
+        <div class="growth-overview-grid">
+          <div class="health-score-card">
+            <h3>Overall Health Score</h3>
+            <div class="score-dial-wrapper">
+              <div class="score-circle" id="scoreCircle">
+                <span class="score-number" id="healthScoreNum">84</span>
+                <span class="score-total">/ 100</span>
+              </div>
+            </div>
+            <p class="score-status" id="scoreStatusText">Excellent Orbit! 🌟 Keep maintaining your activity & water intake.</p>
+          </div>
+
+          <div class="habits-card">
+            <h3>Daily Habit Ring</h3>
+            <div class="habits-list" id="habitsList"></div>
+          </div>
+        </div>
+
+        <div class="section-header mt-4">
+          <h3>Milestone Badges & Rewards</h3>
+        </div>
+        <div class="badges-grid" id="badgesGrid"></div>
+      </section>
+
+    </main>
+
+    <!-- Bottom App Navigation Shell -->
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-target-view="view-hero">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">Home</span>
+      </button>
+      <button class="nav-item" data-target-view="view-care">
+        <span class="nav-icon">🩺</span>
+        <span class="nav-label">Care</span>
+      </button>
+      <button class="nav-item" data-target-view="view-activity">
+        <span class="nav-icon">🏃</span>
+        <span class="nav-label">Activity</span>
+      </button>
+      
+      <!-- Central FAB Button -->
+      <button class="fab-btn" id="mainFabBtn" title="Quick Health Log" aria-label="Quick Health Log">
+        <span>+</span>
+      </button>
+      
+      <button class="nav-item" data-target-view="view-report">
+        <span class="nav-icon">📊</span>
+        <span class="nav-label">Report</span>
+      </button>
+      <button class="nav-item" data-target-view="view-nutrition">
+        <span class="nav-icon">🥗</span>
+        <span class="nav-label">Nutrition</span>
+      </button>
+      <button class="nav-item" data-target-view="view-growth">
+        <span class="nav-icon">🌱</span>
+        <span class="nav-label">Growth</span>
+      </button>
+    </nav>
+
+    <!-- MODALS & DRAWERS -->
+
+    <!-- Quick Log FAB Menu Overlay -->
+    <div id="fabOverlay" class="modal-overlay hidden">
+      <div class="fab-menu-card">
+        <h3>⚡ Quick Health Action</h3>
+        <div class="fab-actions-grid">
+          <button class="fab-action-item" id="fabAddWater">
+            <span class="fab-icon">💧</span>
+            <span>Add Water</span>
+          </button>
+          <button class="fab-action-item" id="fabLogVital">
+            <span class="fab-icon">🩸</span>
+            <span>Log Vitals</span>
+          </button>
+          <button class="fab-action-item" id="fabLogMealItem">
+            <span class="fab-icon">🥗</span>
+            <span>Log Meal</span>
+          </button>
+          <button class="fab-action-item" id="fabWorkout">
+            <span class="fab-icon">🏋️</span>
+            <span>Start Workout</span>
+          </button>
+        </div>
+        <button class="btn btn-close-fab" id="btnCloseFab">Close</button>
+      </div>
+    </div>
+
+    <!-- Disease Detail Modal -->
+    <div id="diseaseModal" class="modal-overlay hidden">
+      <div class="modal-card wide-modal">
+        <button class="modal-close-btn" id="closeDiseaseModal">✕</button>
+        <div id="diseaseModalContent"></div>
+      </div>
+    </div>
+
+    <!-- Log Vitals Modal -->
+    <div id="vitalsModal" class="modal-overlay hidden">
+      <div class="modal-card">
+        <button class="modal-close-btn" id="closeVitalsModal">✕</button>
+        <h3>🩸 Log Vitals</h3>
+        <form id="vitalsForm">
+          <div class="form-group">
+            <label for="vitalType">Vital Metric</label>
+            <select id="vitalType" class="form-input">
+              <option value="hr">Heart Rate (bpm)</option>
+              <option value="bp">Blood Pressure (mmHg)</option>
+              <option value="sugar">Blood Sugar (mg/dL)</option>
+              <option value="bmi">BMI / Weight (kg)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="vitalValue">Measurement Value</label>
+            <input type="text" id="vitalValue" class="form-input" placeholder="e.g. 72 or 120/80" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Save Vital Reading</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div id="cartDrawer" class="cart-drawer-overlay hidden">
+      <div class="cart-drawer">
+        <div class="cart-header">
+          <h3>🛒 Shopping Cart</h3>
+          <button class="cart-close-btn" id="closeCartBtn">✕</button>
+        </div>
+        <div class="cart-items-list" id="cartItemsList"></div>
+        <div class="cart-footer">
+          <div class="cart-total-row">
+            <span>Total Amount:</span>
+            <span class="total-price" id="cartTotalPrice">₹0</span>
+          </div>
+          <button class="btn btn-primary btn-full" id="btnCheckout">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="toast hidden">
+      <span id="toastMessage">Action completed successfully!</span>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
