@@ -32,10 +32,10 @@
   --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08);
   --shadow-lg: 0 10px 30px rgba(15, 23, 42, 0.12);
   
-  /* 3-Font Creative Engine */
-  --font-heading: 'Brandon Grotesque', 'Hanken Grotesk', system-ui, sans-serif;
-  --font-ui: 'Satoshi', system-ui, sans-serif;
-  --font-body: 'Ubuntu', system-ui, sans-serif;
+  /* Ultra-Premium Healthcare & E-Commerce Typography Engine */
+  --font-heading: 'Clash Display', system-ui, sans-serif;
+  --font-ui: 'Cabinet Grotesk', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
 /* Global Typography & Reset */
@@ -54,27 +54,29 @@ html, body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* 1. Brandon Grotesque Engine - Bold Headings & Brand Elements */
+/* 1. Clash Display - Premium High-Impact Headings & Branding */
 h1, h2, h3, h4, h5, h6, 
 .brand-text, .section-header h3, .module-hero h2, 
-.logo-title, .modal-title, .health-score-card h3 {
+.logo-title, .modal-title, .health-score-card h3, .logo-text {
   font-family: var(--font-heading) !important;
-  font-weight: 800 !important;
-  letter-spacing: -0.01em;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
 }
 
-/* 2. Satoshi Engine - Ultra-sleek UI Controls, Buttons, Badges & Titles */
+/* 2. Cabinet Grotesk - Punchy Modern App UI, Buttons, Prices & Badges */
 .btn, .pill, .card-badge, .price-text, .nav-label, 
 .card-title, .node-label, .habit-item label, .section-tag, 
 .stat-value, .water-count, .search-pill-btn, .quick-pill,
-.habit-checkbox, label, select, .score-number {
+.habit-checkbox, label, select, .score-number, .trust-banner {
   font-family: var(--font-ui) !important;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: 0.01em;
 }
 
-/* 3. Ubuntu Engine - Legible Body Text & Descriptions */
-p, .card-desc, input, textarea, .score-status, .hero-text p, .caring-subtitle {
+/* 3. Plus Jakarta Sans - Silky Smooth Reading Body & Descriptions */
+p, .card-desc, input, textarea, .score-status, .hero-text p, .caring-subtitle, .logo-tagline {
   font-family: var(--font-body) !important;
+  font-weight: 500;
 }
 
 * {
