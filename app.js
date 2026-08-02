@@ -408,6 +408,15 @@ function setDiseaseAgeFilter(ageId, btn) {
   renderAgeDiseaseGrid();
 }
 
+function quickSearchDisease(query) {
+  const input = document.getElementById("diseaseSearchInput");
+  if (input) {
+    input.value = query;
+    state.diseaseSearchQuery = query.toLowerCase();
+    renderAgeDiseaseGrid();
+  }
+}
+
 function filterDiseaseExplorer() {
   const input = document.getElementById("diseaseSearchInput");
   if (input) {
